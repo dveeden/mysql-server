@@ -1204,6 +1204,7 @@ int main(int argc,char *argv[])
 			     "mysql> ",MYF(MY_WME));
   current_prompt = my_strdup(PSI_NOT_INSTRUMENTED,
                              default_prompt,MYF(MY_WME));
+  printf("\033]2;%s\007", current_prompt);
   prompt_counter=0;
 
   outfile[0]=0;			// no (default) outfile
