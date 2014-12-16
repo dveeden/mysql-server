@@ -379,6 +379,7 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, long timeout,
                   unsigned long *ssl_errno_holder)
 {
   int r;
+  long options;
   SSL *ssl;
   my_socket sd= mysql_socket_getfd(vio->mysql_socket);
 
@@ -402,7 +403,11 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, long timeout,
   SSL_SESSION_set_timeout(SSL_get_session(ssl), timeout);
   SSL_set_fd(ssl, sd);
 #if !defined(HAVE_YASSL) && defined(SSL_OP_NO_COMPRESSION)
-  SSL_set_options(ssl, SSL_OP_NO_COMPRESSION); /* OpenSSL >= 1.0 only */
+  options = SSL_OP_ALL;
+  options |= SSL_OP_NO_SSLv2;
+  options |= SSL_OP_NO_SSLv3;
+  options |= SSL_OP_NO_COMPRESSION;
+  SSL_set_options(ssl, options);
 #elif OPENSSL_VERSION_NUMBER >= 0x00908000L /* workaround for OpenSSL 0.9.8 */
   sk_SSL_COMP_zero(SSL_COMP_get_compression_methods());
 #endif
