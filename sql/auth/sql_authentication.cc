@@ -2495,7 +2495,7 @@ static int native_password_authenticate(MYSQL_PLUGIN_VIO *vio,
                   );
 
   if (pkt_len == 0) /* no password */
-    DBUG_RETURN(mpvio->acl_user->salt_len != 0 ? CR_AUTH_USER_CREDENTIALS : CR_OK);
+    DBUG_RETURN(CR_AUTH_USER_CREDENTIALS);
 
   info->password_used= PASSWORD_USED_YES;
   if (pkt_len == SCRAMBLE_LENGTH)
