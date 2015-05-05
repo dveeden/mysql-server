@@ -376,6 +376,9 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, long timeout,
 {
   int r;
   SSL *ssl;
+  SSL_SESSION *sslses;
+  FILE *fd;
+  struct stat sb;
   my_socket sd= mysql_socket_getfd(vio->mysql_socket);
   DBUG_ENTER("ssl_do");
   DBUG_PRINT("enter", ("ptr: 0x%lx, sd: %d  ctx: 0x%lx",
@@ -409,12 +412,26 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, long timeout,
   yaSSL_transport_set_send_function(ssl, yassl_send);
 #endif
 
+  if (stat("/tmp/mysql_sess.pem", &sb) != -1) {
+    fd = fopen("/tmp/mysql_sess.pem","r");
+    sslses = PEM_read_SSL_SESSION(fd,NULL,0,NULL);
+    SSL_set_session(ssl, sslses);
+    SSL_SESSION_free(sslses);
+    fclose(fd);
+  }
+
   if ((r= ssl_handshake_loop(vio, ssl, func, ssl_errno_holder)) < 1)
   {
     DBUG_PRINT("error", ("SSL_connect/accept failure"));
     SSL_free(ssl);
     DBUG_RETURN(1);
   }
+
+  fd = fopen("/tmp/mysql_sess.pem", "w");
+  DBUG_PRINT("info",("Writing SSL Session to /tmp/mysql_sess.pem"));
+  sslses = SSL_get_session(ssl);
+  PEM_write_SSL_SESSION(fd, sslses);
+  fclose(fd);
 
   /*
     Connection succeeded. Install new function handlers,
