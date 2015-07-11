@@ -3856,6 +3856,8 @@ static void
 print_table_data(MYSQL_RES *result)
 {
   String separator(256);
+  String separator_end(256);
+  String separator_mid(256);
   MYSQL_ROW	cur;
   MYSQL_FIELD	*field;
   bool		*num_flag;
@@ -3872,12 +3874,15 @@ print_table_data(MYSQL_RES *result)
   }
   if (opt_unicode_drawing)
   {
-    separator.copy("┼",3,charset_info);
+    separator.copy("┌",3,charset_info);
+    separator_end.copy("└",3,charset_info);
+    separator_mid.copy("├",3,charset_info);
   }
   else
   {
     separator.copy("+",1,charset_info);
   }
+  uint fieldnr = 0;
   while ((field = mysql_fetch_field(result)))
   {
     size_t length= column_names ? field->name_length : 0;
@@ -3891,7 +3896,21 @@ print_table_data(MYSQL_RES *result)
     if (opt_unicode_drawing)
     {
       separator.fill((length*3)+separator.length()+6,"─");
-      separator.append("┼");
+      separator_mid.fill((length*3)+separator_mid.length()+6,"─");
+      separator_end.fill((length*3)+separator_end.length()+6,"─");
+      if (fieldnr+1 == result->field_count)
+      {
+        separator.append("┐");
+        separator_end.append("┘");
+        separator_mid.append("┤");
+      }
+      else
+      {
+        separator.append("┬");
+        separator_end.append("┴");
+        separator_mid.append("┼");
+      }
+      fieldnr++;
     }
     else
     {
@@ -3900,6 +3919,11 @@ print_table_data(MYSQL_RES *result)
     }
   }
   separator.append('\0');                       // End marker for \0
+  if (opt_unicode_drawing)
+  {
+    separator_end.append('\0');                       // End marker for \0
+    separator_mid.append('\0');                       // End marker for \0
+  }
   tee_puts((char*) separator.ptr(), PAGER);
   if (column_names)
   {
@@ -3930,7 +3954,14 @@ print_table_data(MYSQL_RES *result)
       num_flag[off]= IS_NUM(field->type);
     }
     (void) tee_fputs("\n", PAGER);
-    tee_puts((char*) separator.ptr(), PAGER);
+    if (opt_unicode_drawing)
+    {
+      tee_puts((char*) separator_mid.ptr(), PAGER);
+    }
+    else
+    {
+      tee_puts((char*) separator.ptr(), PAGER);
+    }
   }
 
   while ((cur= mysql_fetch_row(result)))
@@ -4001,7 +4032,14 @@ print_table_data(MYSQL_RES *result)
     }
     (void) tee_fputs("\n", PAGER);
   }
-  tee_puts((char*) separator.ptr(), PAGER);
+  if (opt_unicode_drawing)
+  {
+    tee_puts((char*) separator_end.ptr(), PAGER);
+  }
+  else
+  {
+    tee_puts((char*) separator.ptr(), PAGER);
+  }
   my_safe_afree((bool *) num_flag, sz, MAX_ALLOCA_SIZE);
 }
 
