@@ -135,7 +135,8 @@ static my_bool ignore_errors=0,wait_flag=0,quick=0,
                default_pager_set= 0, opt_sigint_ignore= 0,
                auto_vertical_output= 0,
                show_warnings= 0, executing_query= 0, interrupted_query= 0,
-               ignore_spaces= 0, sigint_received= 0, opt_syslog= 0;
+               ignore_spaces= 0, sigint_received= 0, opt_syslog= 0,
+               opt_unicode_drawing;
 static my_bool debug_info_flag, debug_check_flag;
 static my_bool column_types_flag;
 static my_bool preserve_comments= 0;
@@ -1798,6 +1799,9 @@ static struct my_option my_long_options[] =
   {"i-am-a-dummy", 'U', "Synonym for option --safe-updates, -U.",
    &safe_updates, &safe_updates, 0, GET_BOOL, NO_ARG, 0, 0,
    0, 0, 0, 0},
+  {"unicode-drawing", 'd', "Use unicode drawing characters.",
+   &opt_unicode_drawing, &opt_unicode_drawing, 0, GET_BOOL, NO_ARG, 1, 0, 0,
+   0, 0, 0},
   {"verbose", 'v', "Write more. (-v -v -v gives the table output format).", 0,
    0, 0, GET_NO_ARG, NO_ARG, 0, 0, 0, 0, 0, 0},
   {"version", 'V', "Output version information and exit.", 0, 0, 0,
@@ -3866,7 +3870,14 @@ print_table_data(MYSQL_RES *result)
       return;
     mysql_field_seek(result,0);
   }
-  separator.copy("┼",3,charset_info);
+  if (opt_unicode_drawing)
+  {
+    separator.copy("┼",3,charset_info);
+  }
+  else
+  {
+    separator.copy("+",1,charset_info);
+  }
   while ((field = mysql_fetch_field(result)))
   {
     size_t length= column_names ? field->name_length : 0;
@@ -3877,15 +3888,29 @@ print_table_data(MYSQL_RES *result)
     if (length < 4 && !IS_NOT_NULL(field->flags))
       length=4;					// Room for "NULL"
     field->max_length=length;
-    separator.fill((length*3)+separator.length()+6,"─");
-    separator.append("┼");
+    if (opt_unicode_drawing)
+    {
+      separator.fill((length*3)+separator.length()+6,"─");
+      separator.append("┼");
+    }
+    else
+    {
+      separator.fill(length+separator.length()+2,"-");
+      separator.append("+");
+    }
   }
   separator.append('\0');                       // End marker for \0
   tee_puts((char*) separator.ptr(), PAGER);
   if (column_names)
   {
     mysql_field_seek(result,0);
-    (void) tee_fputs("│", PAGER);
+    if (opt_unicode_drawing) {
+      (void) tee_fputs("│", PAGER);
+    }
+    else
+    {
+      (void) tee_fputs("|", PAGER);
+    }
     for (uint off=0; (field = mysql_fetch_field(result)) ; off++)
     {
       size_t name_length= strlen(field->name);
@@ -3893,9 +3918,15 @@ print_table_data(MYSQL_RES *result)
                                                     field->name,
                                                     field->name + name_length);
       size_t display_length= field->max_length + name_length - numcells;
-      tee_fprintf(PAGER, " %-*s │",
-                  min<int>(display_length, MAX_COLUMN_LENGTH),
-                  field->name);
+      if (opt_unicode_drawing) {
+        tee_fprintf(PAGER, " %-*s │",
+                    min<int>(display_length, MAX_COLUMN_LENGTH),
+                    field->name);
+      } else {
+        tee_fprintf(PAGER, " %-*s |",
+                    min<int>(display_length, MAX_COLUMN_LENGTH),
+                    field->name);
+      }
       num_flag[off]= IS_NUM(field->type);
     }
     (void) tee_fputs("\n", PAGER);
@@ -3907,7 +3938,13 @@ print_table_data(MYSQL_RES *result)
     if (interrupted_query)
       break;
     ulong *lengths= mysql_fetch_lengths(result);
-    (void) tee_fputs("│ ", PAGER);
+    if (opt_unicode_drawing) {
+      (void) tee_fputs("│ ", PAGER);
+    }
+    else
+    {
+      (void) tee_fputs("| ", PAGER);
+    }
     mysql_field_seek(result, 0);
     for (uint off= 0; off < mysql_num_fields(result); off++)
     {
@@ -3954,7 +3991,13 @@ print_table_data(MYSQL_RES *result)
         else 
           tee_print_sized_data(buffer, data_length, field_max_length+extra_padding, FALSE);
       }
-      tee_fputs(" │", PAGER);
+      if (opt_unicode_drawing) {
+        tee_fputs(" │", PAGER);
+      }
+      else
+      {
+        tee_fputs(" |", PAGER);
+      }
     }
     (void) tee_fputs("\n", PAGER);
   }
