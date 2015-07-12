@@ -4025,8 +4025,8 @@ static int
 set_connect_attributes(MYSQL *mysql, char *buff, size_t buf_len)
 {
   int rc= 0;
-  register struct passwd *pw;
-  register uid_t uid;
+  struct passwd *pw;
+  uid_t uid;
 
   /*
     Clean up any values set by the client code. We want these options as
@@ -4064,16 +4064,35 @@ set_connect_attributes(MYSQL *mysql, char *buff, size_t buf_len)
   rc+= mysql_options4(mysql, MYSQL_OPT_CONNECT_ATTR_ADD, "_thread", buff);
 #endif
 
+#ifdef _WIN32
+  WCHAR wbuf[255];
+  DWORD wbuf_len= sizeof(wbuf) / sizeof(WCHAR);
+  size_t len;
+  uint dummy_errors;
+
+  if (GetUserNameW(wbuf, &wbuf_len))
+  {
+    len= my_convert(buf, sizeof(buf) - 1, charset_info, (char *) wbuf,
+                    wbuf_len * sizeof(WCHAR), &my_charset_utf16le_bin,
+                    &dummy_errors);
+    buf[len]= 0;
+    rc+= mysql_options4(mysql, MYSQL_OPT_CONNECT_ATTR_ADD, "_login", buff);
+  }
+#else
   uid = geteuid();
+
+#ifdef HAVE_GETPWUID
   pw = getpwuid(uid);
   if (pw) {
     my_snprintf(buff, buf_len, "%s", pw->pw_name);
     rc+= mysql_options4(mysql, MYSQL_OPT_CONNECT_ATTR_ADD, "_login", buff);
   }
+#endif
 
   if (gethostname(buff, buf_len) == 0) {
     rc+= mysql_options4(mysql, MYSQL_OPT_CONNECT_ATTR_ADD, "_hostname", buff);
   }
+#endif
 
   return rc > 0 ? 1 : 0;
 }
