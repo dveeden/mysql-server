@@ -6,8 +6,10 @@ start-error-number 1000
 
 ER_HASHCHK  
         eng "hashchk"
+        nla "hashchk"
 ER_NISAMCHK  
         eng "isamchk"
+        nla "isamchk"
 ER_NO  
         cze "NE"
         dan "NEJ"
@@ -53,7 +55,7 @@ ER_YES
 ER_CANT_CREATE_FILE  
         cze "Nemohu vytvořit soubor '%-.200s' (chybový kód: %d - %s)"
         dan "Kan ikke oprette filen '%-.200s' (Fejlkode: %d - %s)"
-        nla "Kan file '%-.200s' niet aanmaken (Errcode: %d - %s)"
+        nla "Kan bestand '%-.200s' niet aanmaken (Errcode: %d - %s)"
         eng "Can't create file '%-.200s' (errno: %d - %s)"
         est "Ei suuda luua faili '%-.200s' (veakood: %d - %s)"
         fre "Ne peut créer le fichier '%-.200s' (Errcode: %d - %s)"
@@ -269,7 +271,7 @@ ER_CANT_FIND_SYSTEM_REC
 ER_CANT_GET_STAT  
         cze "Nemohu získat stav '%-.200s' (chybový kód: %d - %s)"
         dan "Kan ikke læse status af '%-.200s' (Fejlkode: %d - %s)"
-        nla "Kan de status niet krijgen van '%-.200s' (Errcode: %d - %s)"
+        nla "Fout bij het verkrijgen van de status van '%-.200s' (Errcode: %d - %s)"
         eng "Can't get status of '%-.200s' (errno: %d - %s)"
         est "Ei suuda lugeda '%-.200s' olekut (veakood: %d - %s)"
         fre "Ne peut obtenir le status de '%-.200s' (Errcode: %d - %s)"
@@ -293,7 +295,7 @@ ER_CANT_GET_STAT
 ER_CANT_GET_WD  
         cze "Chyba při zjišťování pracovní adresář (chybový kód: %d - %s)"
         dan "Kan ikke læse aktive folder (Fejlkode: %d - %s)"
-        nla "Kan de werkdirectory niet krijgen (Errcode: %d - %s)"
+        nla "Fout bij het verkrijgen van de werkdirectory (Errcode: %d - %s)"
         eng "Can't get working directory (errno: %d - %s)"
         est "Ei suuda identifitseerida jooksvat kataloogi (veakood: %d - %s)"
         fre "Ne peut obtenir le répertoire de travail (Errcode: %d - %s)"
@@ -317,7 +319,7 @@ ER_CANT_GET_WD
 ER_CANT_LOCK  
         cze "Nemohu uzamknout soubor (chybový kód: %d - %s)"
         dan "Kan ikke låse fil (Fejlkode: %d - %s)"
-        nla "Kan de file niet blokeren (Errcode: %d - %s)"
+        nla "Kan het bestand niet blokeren tegen veranderingen (Errcode: %d - %s)"
         eng "Can't lock file (errno: %d - %s)"
         est "Ei suuda lukustada faili (veakood: %d - %s)"
         fre "Ne peut verrouiller le fichier (Errcode: %d - %s)"
@@ -341,7 +343,7 @@ ER_CANT_LOCK
 ER_CANT_OPEN_FILE  
         cze "Nemohu otevřít soubor '%-.200s' (chybový kód: %d - %s)"
         dan "Kan ikke åbne fil: '%-.200s' (Fejlkode: %d - %s)"
-        nla "Kan de file '%-.200s' niet openen (Errcode: %d - %s)"
+        nla "Kan het betand '%-.200s' niet openen (Errcode: %d - %s)"
         eng "Can't open file: '%-.200s' (errno: %d - %s)"
         est "Ei suuda avada faili '%-.200s' (veakood: %d - %s)"
         fre "Ne peut ouvrir le fichier: '%-.200s' (Errcode: %d - %s)"
@@ -365,7 +367,7 @@ ER_CANT_OPEN_FILE
 ER_FILE_NOT_FOUND  
         cze "Nemohu najít soubor '%-.200s' (chybový kód: %d - %s)"
         dan "Kan ikke finde fila: '%-.200s' (Fejlkode: %d - %s)"
-        nla "Kan de file: '%-.200s' niet vinden (Errcode: %d - %s)"
+        nla "Kan het bestand: '%-.200s' niet vinden (Errcode: %d - %s)"
         eng "Can't find file: '%-.200s' (errno: %d - %s)"
         est "Ei suuda leida faili '%-.200s' (veakood: %d - %s)"
         fre "Ne peut trouver le fichier: '%-.200s' (Errcode: %d - %s)"
@@ -533,7 +535,7 @@ ER_ERROR_ON_CLOSE
 ER_ERROR_ON_READ  
         cze "Chyba při čtení souboru '%-.200s' (chybový kód: %d - %s)"
         dan "Fejl ved læsning af '%-.200s' (Fejlkode: %d - %s)"
-        nla "Fout bij het lezen van file '%-.200s' (Errcode: %d - %s)"
+        nla "Fout bij het lezen van bestand '%-.200s' (Errcode: %d - %s)"
         eng "Error reading file '%-.200s' (errno: %d - %s)"
         est "Viga faili '%-.200s' lugemisel (veakood: %d - %s)"
         fre "Erreur en lecture du fichier '%-.200s' (Errcode: %d - %s)"
@@ -581,7 +583,7 @@ ER_ERROR_ON_RENAME
 ER_ERROR_ON_WRITE  
         cze "Chyba při zápisu do souboru '%-.200s' (chybový kód: %d - %s)"
         dan "Fejl ved skriving av filen '%-.200s' (Fejlkode: %d - %s)"
-        nla "Fout bij het wegschrijven van file '%-.200s' (Errcode: %d - %s)"
+        nla "Fout bij het wegschrijven van bestand '%-.200s' (Errcode: %d - %s)"
         eng "Error writing file '%-.200s' (errno: %d - %s)"
         est "Viga faili '%-.200s' kirjutamisel (veakood: %d - %s)"
         fre "Erreur d'écriture du fichier '%-.200s' (Errcode: %d - %s)"
@@ -845,7 +847,7 @@ ER_OPEN_AS_READONLY
 ER_OUTOFMEMORY HY001 S1001
         cze "Málo paměti. Přestartujte daemona a zkuste znovu (je potřeba %d bytů)"
         dan "Ikke mere hukommelse. Genstart serveren og prøv igen (mangler %d bytes)"
-        nla "Geen geheugen meer. Herstart server en probeer opnieuw (%d bytes nodig)"
+        nla "Geen geheugen meer beschikbaar. Herstart server en probeer opnieuw (%d bytes nodig)"
         eng "Out of memory; restart server and try again (needed %d bytes)"
         est "Mälu  sai otsa. Proovi MySQL uuesti käivitada (puudu jäi %d baiti)"
         fre "Manque de mémoire. Redémarrez le démon et ré-essayez (%d octets nécessaires)"
@@ -893,7 +895,7 @@ ER_OUT_OF_SORTMEMORY HY001 S1001
 ER_UNEXPECTED_EOF  
         cze "Neočekávaný konec souboru při čtení '%-.192s' (chybový kód: %d - %s)"
         dan "Uventet afslutning på fil (eof) ved læsning af filen '%-.192s' (Fejlkode: %d - %s)"
-        nla "Onverwachte eof gevonden tijdens het lezen van file '%-.192s' (Errcode: %d - %s)"
+        nla "Onverwachte EOF gevonden tijdens het lezen van file '%-.192s' (Errcode: %d - %s)"
         eng "Unexpected EOF found when reading file '%-.192s' (errno: %d - %s)"
         est "Ootamatu faililõpumärgend faili '%-.192s' lugemisel (veakood: %d - %s)"
         fre "Fin de fichier inattendue en lisant '%-.192s' (Errcode: %d - %s)"
@@ -941,7 +943,7 @@ ER_CON_COUNT_ERROR 08004
 ER_OUT_OF_RESOURCES  
         cze "Málo prostoru/paměti pro thread"
         dan "Udgået for tråde/hukommelse"
-        nla "Geen thread geheugen meer; controleer of mysqld of andere processen al het beschikbare geheugen gebruikt. Zo niet, dan moet u wellicht 'ulimit' gebruiken om mysqld toe te laten meer geheugen te benutten, of u kunt extra swap ruimte toevoegen"
+        nla "Geen geheugen meer beschikbaar; controleer of mysqld of andere processen al het beschikbare geheugen gebruikt. Zo niet, dan moet u wellicht 'ulimit' gebruiken om mysqld toe te laten meer geheugen te benutten, of u kunt extra swap ruimte toevoegen"
         eng "Out of memory; check if mysqld or some other process uses all available memory; if not, you may have to use 'ulimit' to allow mysqld to use more memory or you can add more swap space"
         est "Mälu sai otsa. Võimalik, et aitab swap-i lisamine või käsu 'ulimit' abil MySQL-le rohkema mälu kasutamise lubamine"
         fre "Manque de 'threads'/mémoire"
@@ -1106,7 +1108,7 @@ ER_UNKNOWN_COM_ERROR 08S01
 ER_BAD_NULL_ERROR 23000 
         cze "Sloupec '%-.192s' nemůže být null"
         dan "Kolonne '%-.192s' kan ikke være NULL"
-        nla "Kolom '%-.192s' kan niet null zijn"
+        nla "Kolom '%-.192s' mag niet null zijn"
         eng "Column '%-.192s' cannot be null"
         est "Tulp '%-.192s' ei saa omada nullväärtust"
         fre "Le champ '%-.192s' ne peut être vide (null)"
@@ -1781,7 +1783,7 @@ ER_WRONG_AUTO_KEY 42000 S1009
 ER_READY  
         cze "%s: připraven na spojení\nVersion: '%s'  socket: '%s'  port: %d""
         dan "%s: klar til tilslutninger\nVersion: '%s'  socket: '%s'  port: %d""
-        nla "%s: klaar voor verbindingen\nVersion: '%s'  socket: '%s'  port: %d""
+        nla "%s: klaar voor verbindingen\nVersie: '%s'  socket: '%s'  port: %d""
         eng "%s: ready for connections.\nVersion: '%s'  socket: '%s'  port: %d"
         est "%s: ootab ühendusi\nVersion: '%s'  socket: '%s'  port: %d""
         fre "%s: Prêt pour des connexions\nVersion: '%s'  socket: '%s'  port: %d""
@@ -1805,7 +1807,7 @@ ER_READY
 ER_NORMAL_SHUTDOWN  
         cze "%s: normální ukončení\n"
         dan "%s: Normal nedlukning\n"
-        nla "%s: Normaal afgesloten \n"
+        nla "%s: Normaal afgesloten\n"
         eng "%s: Normal shutdown\n"
         est "%s: MySQL lõpetas\n"
         fre "%s: Arrêt normal du serveur\n"
@@ -1829,7 +1831,7 @@ ER_NORMAL_SHUTDOWN
 ER_GOT_SIGNAL  
         cze "%s: přijat signal %d, končím\n"
         dan "%s: Fangede signal %d. Afslutter!!\n"
-        nla "%s: Signaal %d. Systeem breekt af!\n"
+        nla "%s: Signaal %d ontvangen. Afbreken!\n"
         eng "%s: Got signal %d. Aborting!\n"
         est "%s: sain signaali %d. Lõpetan!\n"
         fre "%s: Reçu le signal %d. Abandonne!\n"
@@ -1877,7 +1879,7 @@ ER_SHUTDOWN_COMPLETE
 ER_FORCING_CLOSE 08S01 
         cze "%s: násilné uzavření threadu %ld uživatele '%-.48s'\n"
         dan "%s: Forceret nedlukning af tråd: %ld  bruger: '%-.48s'\n"
-        nla "%s: Afsluiten afgedwongen van thread %ld  gebruiker: '%-.48s'\n"
+        nla "%s: Afsluiten afgedwongen voor thread %ld  gebruiker: '%-.48s'\n"
         eng "%s: Forcing close of thread %ld  user: '%-.48s'\n"
         est "%s: Sulgen jõuga lõime %ld  kasutaja: '%-.48s'\n"
         fre "%s: Arrêt forcé de la tâche (thread) %ld  utilisateur: '%-.48s'\n"
@@ -2093,7 +2095,7 @@ ER_ALTER_INFO
 ER_WRONG_SUB_KEY  
         cze "Chybná podčást klíče -- není to řetězec nebo je delší než délka části klíče"
         dan "Forkert indeksdel. Den anvendte nøgledel er ikke en streng eller længden er større end nøglelængden"
-        nla "Foutief sub-gedeelte van de zoeksleutel. De gebruikte zoeksleutel is geen onderdeel van een string of of de gebruikte lengte is langer dan de zoeksleutel"
+        nla "Foutieve prefix van de zoeksleutel. De gebruikte zoeksleutel is geen onderdeel van een string of of de gebruikte lengte is langer dan de zoeksleutel"
         eng "Incorrect prefix key; the used key part isn't a string, the used length is longer than the key part, or the storage engine doesn't support unique prefix keys"
         est "Vigane võtme osa. Kasutatud võtmeosa ei ole string tüüpi, määratud pikkus on pikem kui võtmeosa või tabelihandler ei toeta seda tüüpi võtmeid"
         fre "Mauvaise sous-clef. Ce n'est pas un 'string' ou la longueur dépasse celle définie dans la clef"
@@ -2117,7 +2119,7 @@ ER_WRONG_SUB_KEY
 ER_CANT_REMOVE_ALL_FIELDS 42000 
         cze "Není možné vymazat všechny položky s ALTER TABLE. Použijte DROP TABLE"
         dan "Man kan ikke slette alle felter med ALTER TABLE. Brug DROP TABLE i stedet."
-        nla "Het is niet mogelijk alle velden te verwijderen met ALTER TABLE. Gebruik a.u.b. DROP TABLE hiervoor!"
+        nla "Het is niet mogelijk alle velden te verwijderen met ALTER TABLE. Gebruik DROP TABLE om dit te doen"
         eng "You can't delete all columns with ALTER TABLE; use DROP TABLE instead"
         est "ALTER TABLE kasutades ei saa kustutada kõiki tulpasid. Kustuta tabel DROP TABLE abil"
         fre "Vous ne pouvez effacer tous les champs avec ALTER TABLE. Utilisez DROP TABLE"
@@ -2193,6 +2195,7 @@ ER_UPDATE_TABLE_USED
         rus "Не допускается указание таблицы '%-.192s' в списке таблиц FROM для внесения в нее изменений"
         swe "INSERT-table '%-.192s' får inte finnas i FROM tabell-listan"
         ukr "Таблиця '%-.192s' що змінюється не дозволена у переліку таблиць FROM"
+        nla "Het is niet mogelijk om doel tabel '%-.192s' op te geven voor update in FROM-clausule"
 ER_NO_SUCH_THREAD  
         cze "Neznámá identifikace threadu: %lu"
         dan "Ukendt tråd id: %lu"
@@ -2220,7 +2223,7 @@ ER_NO_SUCH_THREAD
 ER_KILL_DENIED_ERROR  
         cze "Nejste vlastníkem threadu %lu"
         dan "Du er ikke ejer af tråden %lu"
-        nla "U bent geen bezitter van thread %lu"
+        nla "U bent geen eigenaar van thread %lu"
         eng "You are not owner of thread %lu"
         est "Ei ole lõime %lu omanik"
         fre "Vous n'êtes pas propriétaire de la tâche no: %lu"
@@ -2244,7 +2247,7 @@ ER_KILL_DENIED_ERROR
 ER_NO_TABLES_USED  
         cze "Nejsou použity žádné tabulky"
         dan "Ingen tabeller i brug"
-        nla "Geen tabellen gebruikt."
+        nla "Geen tabellen gebruikt"
         eng "No tables used"
         est "Ühtegi tabelit pole kasutusel"
         fre "Aucune table utilisée"
@@ -2316,7 +2319,7 @@ ER_NO_UNIQUE_LOGFILE
 ER_TABLE_NOT_LOCKED_FOR_WRITE  
         cze "Tabulka '%-.192s' byla zamčena s READ a nemůže být změněna"
         dan "Tabellen '%-.192s' var låst med READ lås og kan ikke opdateres"
-        nla "Tabel '%-.192s' was gelocked met een lock om te lezen. Derhalve kunnen geen wijzigingen worden opgeslagen."
+        nla "Tabel '%-.192s' was gelocked met een lock om te lezen. Derhalve kunnen er geen wijzigingen worden gemaakt."
         eng "Table '%-.192s' was locked with a READ lock and can't be updated"
         est "Tabel '%-.192s' on lukustatud READ lukuga ning ei ole muudetav"
         fre "Table '%-.192s' verrouillée lecture (READ): modification impossible"
@@ -2436,7 +2439,7 @@ ER_WRONG_TABLE_NAME 42000
 ER_TOO_BIG_SELECT 42000 
         cze "Zadaný SELECT by procházel příliš mnoho záznamů a trval velmi dlouho. Zkontrolujte tvar WHERE a je-li SELECT v pořádku, použijte SET SQL_BIG_SELECTS=1"
         dan "SELECT ville undersøge for mange poster og ville sandsynligvis tage meget lang tid. Undersøg WHERE delen og brug SET SQL_BIG_SELECTS=1 hvis udtrykket er korrekt"
-        nla "Het SELECT-statement zou te veel records analyseren en dus veel tijd in beslagnemen. Kijk het WHERE-gedeelte van de query na en kies SET SQL_BIG_SELECTS=1 als het stament in orde is."
+        nla "Het SELECT-statement zou meer dan MAX_JOIN_SIZE records analyseren; Kijk het WHERE-gedeelte van de query na en gebruik SET SQL_BIG_SELECTS=1 of SET MAX_JOIN_SIZE=# als het stament in orde is."
         eng "The SELECT would examine more than MAX_JOIN_SIZE rows; check your WHERE and use SET SQL_BIG_SELECTS=1 or SET MAX_JOIN_SIZE=# if the SELECT is okay"
         est "SELECT lause peab läbi vaatama suure hulga kirjeid ja võtaks tõenäoliselt liiga kaua aega. Tasub kontrollida WHERE klauslit ja vajadusel kasutada käsku SET SQL_BIG_SELECTS=1"
         fre "SELECT va devoir examiner beaucoup d'enregistrements ce qui va prendre du temps. Vérifiez la clause WHERE et utilisez SET SQL_BIG_SELECTS=1 si SELECT se passe bien"
@@ -2603,7 +2606,7 @@ ER_FIELD_SPECIFIED_TWICE 42000
 ER_INVALID_GROUP_FUNC_USE  
         cze "Nesprávné použití funkce group"
         dan "Forkert brug af grupperings-funktion"
-        nla "Ongeldig gebruik van GROUP-functie"
+        nla "Ongeldig gebruik van group functie"
         eng "Invalid use of group function"
         est "Vigane grupeerimisfunktsiooni kasutus"
         fre "Utilisation invalide de la clause GROUP"
@@ -2690,7 +2693,7 @@ ER_RECORD_FILE_FULL
 ER_UNKNOWN_CHARACTER_SET 42000 
         cze "Neznámá znaková sada: '%-.64s'"
         dan "Ukendt tegnsæt: '%-.64s'"
-        nla "Onbekende character set: '%-.64s'"
+        nla "Onbekende karakter set: '%-.64s'"
         eng "Unknown character set: '%-.64s'"
         est "Vigane kooditabel '%-.64s'"
         fre "Jeu de caractères inconnu: '%-.64s'"
@@ -2711,7 +2714,7 @@ ER_UNKNOWN_CHARACTER_SET 42000
 ER_TOO_MANY_TABLES  
         cze "Příliš mnoho tabulek, MySQL jich může mít v joinu jen %d"
         dan "For mange tabeller. MySQL kan kun bruge %d tabeller i et join"
-        nla "Teveel tabellen. MySQL kan slechts %d tabellen in een join bevatten"
+        nla "Teveel tabellen. MySQL kan slechts %d tabellen in een join gebruiken"
         eng "Too many tables; MySQL can only use %d tables in a join"
         est "Liiga palju tabeleid. MySQL suudab JOINiga ühendada kuni %d tabelit"
         fre "Trop de tables. MySQL ne peut utiliser que %d tables dans un JOIN"
@@ -2732,7 +2735,7 @@ ER_TOO_MANY_TABLES
 ER_TOO_MANY_FIELDS  
         cze "Příliš mnoho položek"
         dan "For mange felter"
-        nla "Te veel velden"
+        nla "Te veel kolommen"
         eng "Too many columns"
         est "Liiga palju tulpasid"
         fre "Trop de champs"
@@ -2753,7 +2756,7 @@ ER_TOO_MANY_FIELDS
 ER_TOO_BIG_ROWSIZE 42000 
         cze "Řádek je příliš velký. Maximální velikost řádku, nepočítaje položky blob, je %ld. Musíte změnit některé položky na blob"
         dan "For store poster. Max post størrelse, uden BLOB's, er %ld. Du må lave nogle felter til BLOB's"
-        nla "Rij-grootte is groter dan toegestaan. Maximale rij grootte, blobs niet meegeteld, is %ld. U dient sommige velden in blobs te veranderen."
+        nla "Rij-grootte te groot. Maximale rij grootte, blobs niet meegeteld, is %ld. Dit is inclusief storage overhead, zie ook de handleiding. U dient sommige velden in BLOBs of TEXT te veranderen."
         eng "Row size too large. The maximum row size for the used table type, not counting BLOBs, is %ld. This includes storage overhead, check the manual. You have to change some columns to TEXT or BLOBs"
         est "Liiga pikk kirje. Kirje maksimumpikkus arvestamata BLOB-tüüpi välju on %ld. Muuda mõned väljad BLOB-tüüpi väljadeks"
         fre "Ligne trop grande. Le taille maximale d'une ligne, sauf les BLOBs, est %ld. Changez le type de quelques colonnes en BLOB"
@@ -2774,7 +2777,7 @@ ER_TOO_BIG_ROWSIZE 42000
 ER_STACK_OVERRUN  
         cze "Přetečení zásobníku threadu: použito %ld z %ld. Použijte 'mysqld --thread_stack=#' k zadání většího zásobníku"
         dan "Thread stack brugt:  Brugt: %ld af en %ld stak.  Brug 'mysqld --thread_stack=#' for at allokere en større stak om nødvendigt"
-        nla "Thread stapel overrun:  Gebruikte: %ld van een %ld stack. Gebruik 'mysqld --thread_stack=#' om een grotere stapel te definieren (indien noodzakelijk)."
+        nla "Thread stack overrun:  Gebruikte: %ld van een %ld stack. Gebruik 'mysqld --thread_stack=#' om een grotere stack te definieren indien noodzakelijk."
         eng "Thread stack overrun:  Used: %ld of a %ld stack.  Use 'mysqld --thread_stack=#' to specify a bigger stack if needed"
         fre "Débordement de la pile des tâches (Thread stack). Utilisées: %ld pour une pile de %ld.  Essayez 'mysqld --thread_stack=#' pour indiquer une plus grande valeur"
         ger "Thread-Stack-Überlauf. Benutzt: %ld von %ld Stack. 'mysqld --thread_stack=#' verwenden, um bei Bedarf einen größeren Stack anzulegen"
@@ -2794,7 +2797,7 @@ ER_STACK_OVERRUN
 ER_WRONG_OUTER_JOIN 42000 
         cze "V OUTER JOIN byl nalezen křížový odkaz. Prověřte ON podmínky"
         dan "Krydsreferencer fundet i OUTER JOIN; check dine ON conditions"
-        nla "Gekruiste afhankelijkheid gevonden in OUTER JOIN. Controleer uw ON-conditions"
+        nla "Gekruiste afhankelijkheid gevonden in OUTER JOIN. Controleer uw ON-condities"
         eng "Cross dependency found in OUTER JOIN; examine your ON conditions"
         est "Ristsõltuvus OUTER JOIN klauslis. Kontrolli oma ON tingimusi"
         fre "Dépendance croisée dans une clause OUTER JOIN. Vérifiez la condition ON"
@@ -2813,6 +2816,7 @@ ER_WRONG_OUTER_JOIN 42000
         ukr "Перехресна залежність у OUTER JOIN. Перевірте умову ON"
 ER_NULL_COLUMN_IN_INDEX 42000 
         eng "Table handler doesn't support NULL in given index. Please change column '%-.192s' to be NOT NULL or use another handler"
+        nla "Tabel handler heeft geen ondersteuning voor NULL in de opgegeven index. Verander kolom '%-.192s' naar NOT NULL of gebruik een andere handler"
         swe "Tabell hanteraren kan inte indexera NULL kolumner för den givna index typen. Ändra '%-.192s' till NOT NULL eller använd en annan hanterare"
 ER_CANT_FIND_UDF  
         cze "Nemohu načíst funkci '%-.192s'"
@@ -2901,7 +2905,7 @@ ER_UDF_EXISTS
 ER_CANT_OPEN_LIBRARY  
         cze "Nemohu otevřít sdílenou knihovnu '%-.192s' (errno: %d %-.128s)"
         dan "Kan ikke åbne delt bibliotek '%-.192s' (errno: %d %-.128s)"
-        nla "Kan shared library '%-.192s' niet openen (Errcode: %d %-.128s)"
+        nla "Kan shared library '%-.192s' niet openen (foutcode: %d %-.128s)"
         eng "Can't open shared library '%-.192s' (errno: %d %-.128s)"
         est "Ei suuda avada jagatud teeki '%-.192s' (veakood: %d %-.128s)"
         fre "Impossible d'ouvrir la bibliothèque partagée '%-.192s' (errno: %d %-.128s)"
@@ -2925,7 +2929,7 @@ ER_CANT_OPEN_LIBRARY
 ER_CANT_FIND_DL_ENTRY
         cze "Nemohu najít funkci '%-.128s' v knihovně"
         dan "Kan ikke finde funktionen '%-.128s' i bibliotek"
-        nla "Kan functie '%-.128s' niet in library vinden"
+        nla "Kan de functie '%-.128s' niet in library vinden"
         eng "Can't find symbol '%-.128s' in library"
         est "Ei leia funktsiooni '%-.128s' antud teegis"
         fre "Impossible de trouver la fonction '%-.128s' dans la bibliothèque"
@@ -3047,7 +3051,7 @@ ER_PASSWORD_NOT_ALLOWED 42000
 ER_PASSWORD_NO_MATCH 42000 
         cze "V tabulce user není žádný odpovídající řádek"
         dan "Kan ikke finde nogen tilsvarende poster i bruger tabellen"
-        nla "Kan geen enkele passende rij vinden in de gebruikers tabel"
+        nla "Kan geen overeenkomstige rij vinden in de gebruikers tabel"
         eng "Can't find any matching row in the user table"
         est "Ei leia vastavat kirjet kasutajate tabelis"
         fre "Impossible de trouver un enregistrement correspondant dans la table user"
@@ -3067,7 +3071,7 @@ ER_PASSWORD_NO_MATCH 42000
 ER_UPDATE_INFO  
         cze "Nalezených řádků: %ld  Změněno: %ld  Varování: %ld"
         dan "Poster fundet: %ld  Ændret: %ld  Advarsler: %ld"
-        nla "Passende rijen: %ld  Gewijzigd: %ld  Waarschuwingen: %ld"
+        nla "Overeenkomstige rijen: %ld  Gewijzigd: %ld  Waarschuwingen: %ld"
         eng "Rows matched: %ld  Changed: %ld  Warnings: %ld"
         est "Sobinud kirjeid: %ld  Muudetud: %ld  Hoiatusi: %ld"
         fre "Enregistrements correspondants: %ld  Modifiés: %ld  Warnings: %ld"
@@ -3190,7 +3194,7 @@ ER_REGEXP_ERROR 42000
 ER_MIX_OF_GROUP_FUNC_AND_FIELDS 42000 
         cze "Pokud není žádná GROUP BY klauzule, není dovoleno současné použití GROUP položek (MIN(),MAX(),COUNT()...) s ne GROUP položkami"
         dan "Sammenblanding af GROUP kolonner (MIN(),MAX(),COUNT()...) uden GROUP kolonner er ikke tilladt, hvis der ikke er noget GROUP BY prædikat"
-        nla "Het mixen van GROUP kolommen (MIN(),MAX(),COUNT()...) met no-GROUP kolommen is foutief indien er geen GROUP BY clausule is"
+        nla "Het mixen van GROUP kolommen (MIN(),MAX(),COUNT()...) met zonder GROUP kolommen is foutief indien er geen GROUP BY clausule is"
         eng "Mixing of GROUP columns (MIN(),MAX(),COUNT(),...) with no GROUP columns is illegal if there is no GROUP BY clause"
         est "GROUP tulpade (MIN(),MAX(),COUNT()...) kooskasutamine tavaliste tulpadega ilma GROUP BY klauslita ei ole lubatud"
         fre "Mélanger les colonnes GROUP (MIN(),MAX(),COUNT()...) avec des colonnes normales est interdit s'il n'y a pas de clause GROUP BY"
@@ -3209,7 +3213,7 @@ ER_MIX_OF_GROUP_FUNC_AND_FIELDS 42000
 ER_NONEXISTING_GRANT 42000 
         cze "Neexistuje odpovídající grant pro uživatele '%-.48s' na stroji '%-.64s'"
         dan "Denne tilladelse findes ikke for brugeren '%-.48s' på vært '%-.64s'"
-        nla "Deze toegang (GRANT) is niet toegekend voor gebruiker '%-.48s' op host '%-.64s'"
+        nla "Er zijn geen rechten gedefineerd voor gebruiker '%-.48s' op host '%-.64s'"
         eng "There is no such grant defined for user '%-.48s' on host '%-.64s'"
         est "Sellist õigust ei ole defineeritud kasutajale '%-.48s' masinast '%-.64s'"
         fre "Un tel droit n'est pas défini pour l'utilisateur '%-.48s' sur l'hôte '%-.64s'"
@@ -3332,7 +3336,7 @@ ER_NO_SUCH_TABLE 42S02
 ER_NONEXISTING_TABLE_GRANT 42000 
         cze "Neexistuje odpovídající grant pro uživatele '%-.48s' na stroji '%-.64s' pro tabulku '%-.192s'"
         dan "Denne tilladelse eksisterer ikke for brugeren '%-.48s' på vært '%-.64s' for tabellen '%-.192s'"
-        nla "Deze toegang (GRANT) is niet toegekend voor gebruiker '%-.48s' op host '%-.64s' op tabel '%-.192s'"
+        nla "Er zijn geen rechten toegekend voor gebruiker '%-.48s' op host '%-.64s' op tabel '%-.192s'"
         eng "There is no such grant defined for user '%-.48s' on host '%-.64s' on table '%-.192s'"
         est "Sellist õigust ei ole defineeritud kasutajale '%-.48s' masinast '%-.64s' tabelile '%-.192s'"
         fre "Un tel droit n'est pas défini pour l'utilisateur '%-.48s' sur l'hôte '%-.64s' sur la table '%-.192s'"
@@ -3351,7 +3355,7 @@ ER_NONEXISTING_TABLE_GRANT 42000
 ER_NOT_ALLOWED_COMMAND 42000 
         cze "Použitý příkaz není v této verzi MySQL povolen"
         dan "Den brugte kommando er ikke tilladt med denne udgave af MySQL"
-        nla "Het used commando is niet toegestaan in deze MySQL versie"
+        nla "Het gebruikte commando is niet toegestaan in deze MySQL versie"
         eng "The used command is not allowed with this MySQL version"
         est "Antud käsk ei ole lubatud käesolevas MySQL versioonis"
         fre "Cette commande n'existe pas dans cette version de MySQL"
@@ -3370,7 +3374,7 @@ ER_NOT_ALLOWED_COMMAND 42000
 ER_SYNTAX_ERROR 42000 
         cze "Vaše syntaxe je nějaká divná"
         dan "Der er en fejl i SQL syntaksen"
-        nla "Er is iets fout in de gebruikte syntax"
+        nla "Er is een fout in de gebruikte syntax; controleer de handleiding voor de gebruikte MySQL server versie voor de juiste syntax"
         eng "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use"
         est "Viga SQL süntaksis"
         fre "Erreur de syntaxe"
@@ -3393,8 +3397,10 @@ ER_SYNTAX_ERROR 42000
         ukr "У вас помилка у синтаксисі SQL"
 ER_UNUSED1
         eng "Delayed insert thread couldn't get requested lock for table %-.192s"
+        nla "Vertraagte insert thread kon de gevraagde lock niet krijgen voor tabel %-.192s"
 ER_UNUSED2
         eng "Too many delayed threads in use"
+        nla "Te veel vertraagde threads in gebruik"
 ER_ABORTING_CONNECTION 08S01 
         cze "Zrušeno spojení %ld do databáze: '%-.192s' uživatel: '%-.48s' (%-.64s)"
         dan "Afbrudt forbindelse %ld til database: '%-.192s' bruger: '%-.48s' (%-.64s)"
@@ -3592,7 +3598,7 @@ ER_NET_WRITE_INTERRUPTED 08S01
 ER_TOO_LONG_STRING 42000 
         cze "Výsledný řetězec je delší než 'max_allowed_packet'"
         dan "Strengen med resultater er større end 'max_allowed_packet'"
-        nla "Resultaat string is langer dan 'max_allowed_packet'"
+        nla "Resultaat string is langer dan 'max_allowed_packet' bytes"
         eng "Result string is longer than 'max_allowed_packet' bytes"
         est "Tulemus on pikem kui lubatud 'max_allowed_packet' muutujaga"
         fre "La chaîne résultat est plus grande que 'max_allowed_packet'"
@@ -3645,6 +3651,7 @@ ER_TABLE_CANT_HANDLE_AUTO_INCREMENT 42000
         ukr "Використаний тип таблиці не підтримує AUTO_INCREMENT стовбці"
 ER_UNUSED3
         eng "INSERT DELAYED can't be used with table '%-.192s' because it is locked with LOCK TABLES"
+        nla "INSERT DELAYED kan niet gebruikt worden met tabel '%-.192s' omdat het gelocked is met LOCK TABLES"
 ER_WRONG_COLUMN_NAME 42000 
         cze "Nesprávné jméno sloupce '%-.100s'"
         dan "Forkert kolonnenavn '%-.100s'"
@@ -3666,7 +3673,7 @@ ER_WRONG_COLUMN_NAME 42000
 ER_WRONG_KEY_COLUMN 42000 
         cze "Handler použité tabulky neumí indexovat sloupce '%-.192s'"
         dan "Den brugte tabeltype kan ikke indeksere kolonnen '%-.192s'"
-        nla "De gebruikte tabel 'handler' kan kolom '%-.192s' niet indexeren"
+        nla "De gebruikte storge engine kan kolom '%-.192s' niet indexeren"
         eng "The used storage engine can't index column '%-.192s'"
         est "Tabelihandler ei oska indekseerida tulpa '%-.192s'"
         fre "Le handler de la table ne peut indexé la colonne '%-.192s'"
@@ -3690,7 +3697,7 @@ ER_WRONG_KEY_COLUMN 42000
 ER_WRONG_MRG_TABLE  
         cze "Všechny tabulky v MERGE tabulce nejsou definovány stejně"
         dan "Tabellerne i MERGE er ikke defineret ens"
-        nla "Niet alle tabellen in de MERGE tabel hebben identieke gedefinities"
+        nla "Kan de onderliggende tabel niet openen omdat de definitie afwijkt of omdat het geen MyISAM is of niet bestaat"
         eng "Unable to open underlying table which is differently defined or of non-MyISAM type or doesn't exist"
         est "Kõik tabelid MERGE tabeli määratluses ei ole identsed"
         fre "Toutes les tables de la table de type MERGE n'ont pas la même définition"
@@ -3713,7 +3720,7 @@ ER_WRONG_MRG_TABLE
 ER_DUP_UNIQUE 23000 
         cze "Kvůli unique constraintu nemozu zapsat do tabulky '%-.192s'"
         dan "Kan ikke skrive til tabellen '%-.192s' fordi det vil bryde CONSTRAINT regler"
-        nla "Kan niet opslaan naar table '%-.192s' vanwege 'unique' beperking"
+        nla "Kan niet wegschrijven naar tabel '%-.192s' vanwege 'unique' beperking"
         eng "Can't write, because of unique constraint, to table '%-.192s'"
         est "Ei suuda kirjutada tabelisse '%-.192s', kuna see rikub ühesuse kitsendust"
         fre "Écriture impossible à cause d'un index UNIQUE sur la table '%-.192s'"
@@ -4003,7 +4010,7 @@ ER_NEW_ABORTING_CONNECTION 08S01
 ER_DUMP_NOT_IMPLEMENTED  
         cze "Handler tabulky nepodporuje binární dump"
         dan "Denne tabeltype unserstøtter ikke binært tabeldump"
-        nla "De 'handler' voor de tabel ondersteund geen binaire tabel dump"
+        nla "De storage engine voor de tabel ondersteund geen binaire tabel dump"
         eng "The storage engine for the table does not support binary table dump"
         fre "Ce type de table ne supporte pas les copies binaires"
         ger "Die Speicher-Engine für die Tabelle unterstützt keinen binären Tabellen-Dump"
@@ -4018,6 +4025,7 @@ ER_DUMP_NOT_IMPLEMENTED
         ukr "Цей тип таблиці не підтримує бінарну передачу таблиці"
 ER_FLUSH_MASTER_BINLOG_CLOSED  
         eng "Binlog closed, cannot RESET MASTER"
+        nla "Binlog afgesloten, kan RESET MASTER niet uitvoeren"
         ger "Binlog geschlossen. Kann RESET MASTER nicht ausführen"
         jpn "バイナリログがクローズされています。RESET MASTER を実行できません。"
         por "Binlog fechado. Não pode fazer RESET MASTER"
@@ -4027,7 +4035,7 @@ ER_FLUSH_MASTER_BINLOG_CLOSED
 ER_INDEX_REBUILD  
         cze "Přebudování indexu dumpnuté tabulky '%-.192s' nebylo úspěšné"
         dan "Kunne ikke genopbygge indekset for den dumpede tabel '%-.192s'"
-        nla "Gefaald tijdens heropbouw index van gedumpte tabel '%-.192s'"
+        nla "Gefaald tijdens heropbouwen van de index van gedumpte tabel '%-.192s'"
         eng "Failed rebuilding the index of  dumped table '%-.192s'"
         fre "La reconstruction de l'index de la table copiée '%-.192s' a échoué"
         ger "Neuerstellung des Index der Dump-Tabelle '%-.192s' fehlgeschlagen"
@@ -4182,7 +4190,7 @@ ER_WARNING_NOT_COMPLETE_ROLLBACK
         ukr "Застереження: Деякі нетранзакційні зміни таблиць не можна буде повернути"
 ER_TRANS_CACHE_FULL  
         dan "Fler-udtryks transaktion krævede mere plads en 'max_binlog_cache_size' bytes. Forhøj værdien af denne variabel og prøv igen"
-        nla "Multi-statement transactie vereist meer dan 'max_binlog_cache_size' bytes opslag. Verhoog deze mysqld variabele en probeer opnieuw"
+        nla "Multi-statement transactie vereist meer dan 'max_binlog_cache_size' bytes. Verhoog deze mysqld variabele en probeer opnieuw"
         eng "Multi-statement transaction required more than 'max_binlog_cache_size' bytes of storage; increase this mysqld variable and try again"
         est "Mitme lausendiga transaktsioon nõudis rohkem ruumi kui lubatud 'max_binlog_cache_size' muutujaga. Suurenda muutuja väärtust ja proovi uuesti"
         fre "Cette transaction à commandes multiples nécessite plus de 'max_binlog_cache_size' octets de stockage, augmentez cette variable de mysqld et réessayez"
@@ -4196,7 +4204,7 @@ ER_TRANS_CACHE_FULL
         ukr "Транзакція з багатьма виразами вимагає більше ніж 'max_binlog_cache_size' байтів для зберігання. Збільште цю змінну mysqld та спробуйте знову"
 ER_SLAVE_MUST_STOP  
         dan "Denne handling kunne ikke udføres med kørende slave, brug først kommandoen STOP SLAVE"
-        nla "Deze operatie kan niet worden uitgevoerd met een actieve slave, doe eerst STOP SLAVE"
+        nla "Deze operatie kan niet worden uitgevoerd met een actieve slave, voer eerst STOP SLAVE uit"
         eng "This operation cannot be performed with a running slave; run STOP SLAVE first"
         fre "Cette opération ne peut être réalisée avec un esclave actif, faites STOP SLAVE d'abord"
         ger "Diese Operation kann bei einem aktiven Slave nicht durchgeführt werden. Bitte zuerst STOP SLAVE ausführen"
@@ -4238,6 +4246,7 @@ ER_BAD_SLAVE
         ukr "Сервер не зконфігуровано як підлеглий, виправте це у файлі конфігурації або з CHANGE MASTER TO"
 ER_MASTER_INFO  
         eng "Could not initialize master info structure; more error messages can be found in the MySQL error log"
+        nla "Kon de master info stucturen niet initialiseren; meer foutmeldingen kunnen in MySQL error log gevonden worden"
         fre "Impossible d'initialiser les structures d'information de maître, vous trouverez des messages d'erreur supplémentaires dans le journal des erreurs de MySQL"
         ger "Konnte Master-Info-Struktur nicht initialisieren. Weitere Fehlermeldungen können im MySQL-Error-Log eingesehen werden"
         jpn "'master info'構造体の初期化ができませんでした。MySQLエラーログでエラーメッセージを確認してください。"
@@ -4289,7 +4298,7 @@ ER_SET_CONSTANTS_ONLY
         ukr "Можна використовувати лише вирази зі сталими у SET"
 ER_LOCK_WAIT_TIMEOUT  
         dan "Lock wait timeout overskredet"
-        nla "Lock wacht tijd overschreden"
+        nla "Lock wacht tijd overschreden; probeer de transactie opniet te starten"
         eng "Lock wait timeout exceeded; try restarting transaction"
         est "Kontrollaeg ületatud luku järel ootamisel; Proovi transaktsiooni otsast alata"
         fre "Timeout sur l'obtention du verrou"
@@ -4391,7 +4400,7 @@ ER_NO_PERMISSION_TO_CREATE_USER 42000
         swe "'%-.48s'@'%-.64s' har inte rättighet att skapa nya användare"
         ukr "Користувачу '%-.48s'@'%-.64s' не дозволено створювати нових користувачів"
 ER_UNION_TABLES_IN_DIFFERENT_DIR  
-        nla "Incorrecte tabel definitie; alle MERGE tabellen moeten tot dezelfde database behoren"
+        nla "Incorrecte tabel definitie; alle MERGE tabellen dienen in tot dezelfde database te behoren"
         eng "Incorrect table definition; all MERGE tables must be in the same database"
         est "Vigane tabelimääratlus; kõik MERGE tabeli liikmed peavad asuma samas andmebaasis"
         fre "Définition de table incorrecte; toutes les tables MERGE doivent être dans la même base de donnée"
@@ -4458,6 +4467,7 @@ ER_NO_REFERENCED_ROW 23000
         swe "FOREIGN KEY-konflikt:  Kan inte skriva barn"
 ER_ROW_IS_REFERENCED 23000 
         eng "Cannot delete or update a parent row: a foreign key constraint fails"
+        nla "Kan de parent rij niet verwijderen of updaten: een foreign key beperking wordt overschreven"
         fre "Impossible de supprimer un enregistrement père : une constrainte externe l'empèche"
         ger "Löschen oder Aktualisieren eines Eltern-Datensatzes schlug aufgrund einer Fremdschlüssel-Beschränkung fehl"
         greek "Cannot delete a parent row: a foreign key constraint fails"
@@ -4562,7 +4572,7 @@ ER_DUP_ARGUMENT
         spa "Opción '%s' usada dos veces en el comando"
         swe "Option '%s' användes två gånger"
 ER_USER_LIMIT_REACHED 42000 
-        nla "Gebruiker '%-.64s' heeft het maximale gebruik van de '%s' faciliteit overschreden (huidige waarde: %ld)"
+        nla "Gebruiker '%-.64s' heeft het maximale gebruik van de '%s' resource overschreden (huidige waarde: %ld)"
         eng "User '%-.64s' has exceeded the '%s' resource (current value: %ld)"
         ger "Benutzer '%-.64s' hat die Ressourcenbeschränkung '%s' überschritten (aktueller Wert: %ld)"
         ita "L'utente '%-.64s' ha ecceduto la risorsa '%s' (valore corrente: %ld)"
@@ -4583,7 +4593,7 @@ ER_SPECIFIC_ACCESS_DENIED_ERROR 42000
         swe "Du har inte privlegiet '%-.128s' som behövs för denna operation"
         ukr "Access denied. You need the %-.128s privilege for this operation"
 ER_LOCAL_VARIABLE  
-        nla "Variabele '%-.64s' is SESSION en kan niet worden gebruikt met SET GLOBAL"
+        nla "Variabele '%-.64s' is een SESSION variabele en kan niet worden gebruikt met SET GLOBAL"
         eng "Variable '%-.64s' is a SESSION variable and can't be used with SET GLOBAL"
         ger "Variable '%-.64s' ist eine lokale Variable und kann nicht mit SET GLOBAL verändert werden"
         ita "La variabile '%-.64s' e' una variabile locale ( SESSION ) e non puo' essere cambiata usando SET GLOBAL"
@@ -4593,7 +4603,7 @@ ER_LOCAL_VARIABLE
         spa "Variable '%-.64s' es una SESSION variable y no puede ser usada con SET GLOBAL"
         swe "Variabel '%-.64s' är en SESSION variabel och kan inte ändrad med SET GLOBAL"
 ER_GLOBAL_VARIABLE  
-        nla "Variabele '%-.64s' is GLOBAL en dient te worden gewijzigd met SET GLOBAL"
+        nla "Variabele '%-.64s' is een GLOBAL variabele en dient te worden gewijzigd met SET GLOBAL"
         eng "Variable '%-.64s' is a GLOBAL variable and should be set with SET GLOBAL"
         ger "Variable '%-.64s' ist eine globale Variable und muss mit SET GLOBAL verändert werden"
         ita "La variabile '%-.64s' e' una variabile globale ( GLOBAL ) e deve essere cambiata usando SET GLOBAL"
@@ -4676,7 +4686,7 @@ ER_SLAVE_IGNORED_TABLE
         eng "Slave SQL thread ignored the query because of replicate-*-table rules"
         ger "Slave-SQL-Thread hat die Abfrage aufgrund von replicate-*-table-Regeln ignoriert"
         jpn "replicate-*-table ルールに従って、スレーブSQLスレッドはクエリを無視しました。"
-        nla "Slave SQL thread negeerde de query vanwege replicate-*-table opties"
+        nla "Slave SQL thread negeerde de query vanwege replicate-*-table regels"
         por "Slave SQL thread ignorado a consulta devido às normas de replicação-*-tabela"
         spa "Slave SQL thread ignorado el query debido a las reglas de replicación-*-tabla"
         swe "Slav SQL tråden ignorerade frågan pga en replicate-*-table regel"
@@ -4685,7 +4695,7 @@ ER_INCORRECT_GLOBAL_LOCAL_VAR
         serbian "Promenljiva '%-.192s' je %s promenljiva"
         ger "Variable '%-.192s' ist eine %s-Variable"
         jpn "変数 '%-.192s' は %s 変数です。"
-        nla "Variabele '%-.192s' is geen %s variabele"
+        nla "Variabele '%-.192s' is een %s variabele"
         spa "Variable '%-.192s' es una %s variable"
         swe "Variabel '%-.192s' är av typ %s"
 ER_WRONG_FK_DEF 42000 
@@ -4840,7 +4850,7 @@ ER_TOO_BIG_FOR_UNCOMPRESS
         eng "Uncompressed data size too large; the maximum size is %d (probably, length of uncompressed data was corrupted)"
         ger "Unkomprimierte Daten sind zu groß. Die maximale Größe beträgt %d (wahrscheinlich wurde die Länge der unkomprimierten Daten beschädigt)"
         jpn "展開後のデータが大きすぎます。最大サイズは %d です。(展開後データの長さ情報が壊れている可能性もあります。)"
-        nla "Ongecomprimeerder data is te groot; de maximum lengte is %d (waarschijnlijk, de lengte van de gecomprimeerde data was beschadigd)"
+        nla "Ongecomprimeerder data is te groot; de maximum lengte is %d (de lengte van de gecomprimeerde data was waarschijnlijk beschadigd)"
         por "Tamanho muito grande dos dados des comprimidos. O máximo tamanho é %d. (provavelmente, o comprimento dos dados descomprimidos está corrupto)"
         spa "Tamaño demasiado grande para datos descomprimidos. El máximo tamaño es %d. (probablemente, extensión de datos descomprimidos fué corrompida)"
 ER_ZLIB_Z_MEM_ERROR  
@@ -4866,6 +4876,7 @@ ER_ZLIB_Z_DATA_ERROR
         spa "ZLIB: Dato de entrada fué corrompido para zlib"
 ER_CUT_VALUE_GROUP_CONCAT  
         eng "Row %u was cut by GROUP_CONCAT()"
+        nla "Rij %u was afgekapt door GROUP_CONCAT()"
 ER_WARN_TOO_FEW_RECORDS 01000 
         eng "Row %ld doesn't contain data for all columns"
         ger "Zeile %ld enthält nicht für alle Felder Daten"
@@ -4882,20 +4893,24 @@ ER_WARN_TOO_MANY_RECORDS 01000
         spa "Línea %ld fué truncada; La misma contine mas datos que las que existen en las columnas de entrada"
 ER_WARN_NULL_TO_NOTNULL 22004 
         eng "Column set to default value; NULL supplied to NOT NULL column '%s' at row %ld"
+        nla "Kolom op standaard waarde gezet; NULL opgegeven voor NOT NULL kolom '%s' bij rij %ld"
         ger "Feld auf Vorgabewert gesetzt, da NULL für NOT-NULL-Feld '%s' in Zeile %ld angegeben"
         jpn "列にデフォルト値が設定されました。NOT NULLの列 '%s' に 行 %ld で NULL が与えられました。"
         por "Dado truncado, NULL fornecido para NOT NULL coluna '%s' na linha %ld"
         spa "Datos truncado, NULL suministrado para NOT NULL columna '%s' en la línea %ld"
 ER_WARN_DATA_OUT_OF_RANGE 22003 
         eng "Out of range value for column '%s' at row %ld"
+        nla "Waarde buiten berijk voor kolom '%s' bij rij %ld"
 WARN_DATA_TRUNCATED 01000 
         eng "Data truncated for column '%s' at row %ld"
+        nla "Data afgekapt voor kolom '%s' bij rij %ld"
         ger "Daten abgeschnitten für Feld '%s' in Zeile %ld"
         jpn "列 '%s' の 行 %ld でデータが切り捨てられました。"
         por "Dado truncado para coluna '%s' na linha %ld"
         spa "Datos truncados para columna '%s' en la línea %ld"
 ER_WARN_USING_OTHER_HANDLER  
         eng "Using storage engine %s for table '%s'"
+        nla "De storage engine %s zal gebruikt worden voor tabel '%s'"
         ger "Für Tabelle '%s' wird Speicher-Engine %s benutzt"
         jpn "ストレージエンジン %s が表 '%s' に利用されています。"
         por "Usando engine de armazenamento %s para tabela '%s'"
@@ -4903,6 +4918,7 @@ ER_WARN_USING_OTHER_HANDLER
         swe "Använder handler %s för tabell '%s'"
 ER_CANT_AGGREGATE_2COLLATIONS  
         eng "Illegal mix of collations (%s,%s) and (%s,%s) for operation '%s'"
+        nla "Ongeldige samenstelling van sorteervolgordes (%s,%s) en (%s,%s) voor bewerking '%s'"
         ger "Unerlaubte Mischung von Sortierreihenfolgen (%s, %s) und (%s, %s) für Operation '%s'"
         jpn "照合順序 (%s,%s) と (%s,%s) の混在は操作 '%s' では不正です。"
         por "Combinação ilegal de collations (%s,%s) e (%s,%s) para operação '%s'"
@@ -4910,44 +4926,52 @@ ER_CANT_AGGREGATE_2COLLATIONS
 ER_DROP_USER  
         eng "Cannot drop one or more of the requested users"
         ger "Kann einen oder mehrere der angegebenen Benutzer nicht löschen"
+        nla "Kan een of meerdere van de opgegeven gebruikers niet verwijderen"
 ER_REVOKE_GRANTS  
         eng "Can't revoke all privileges for one or more of the requested users"
+        nla "Kan de rechten van een of meer gebruikers niet intrekken"
         ger "Kann nicht alle Berechtigungen widerrufen, die für einen oder mehrere Benutzer gewährt wurden"
         jpn "指定されたユーザーから指定された全ての権限を剥奪することができませんでした。"
         por "Não pode revocar todos os privilégios, grant para um ou mais dos usuários pedidos"
         spa "No puede revocar todos los privilegios, derecho para uno o mas de los usuarios solicitados"
 ER_CANT_AGGREGATE_3COLLATIONS  
         eng "Illegal mix of collations (%s,%s), (%s,%s), (%s,%s) for operation '%s'"
+        nla "Ongeldige samenstelling van sorteervolgordes (%s,%s), (%s,%s), (%s,%s) voor bewerking '%s'"
         ger "Unerlaubte Mischung von Sortierreihenfolgen (%s, %s), (%s, %s), (%s, %s) für Operation '%s'"
         jpn "照合順序 (%s,%s), (%s,%s), (%s,%s) の混在は操作 '%s' では不正です。"
         por "Ilegal combinação de collations (%s,%s), (%s,%s), (%s,%s) para operação '%s'"
         spa "Ilegal mezcla de collations (%s,%s), (%s,%s), (%s,%s) para operación '%s'"
 ER_CANT_AGGREGATE_NCOLLATIONS  
         eng "Illegal mix of collations for operation '%s'"
+        nla "Ongeldige samenstelling van sorteervolgordes voor bewerking '%s'"
         ger "Unerlaubte Mischung von Sortierreihenfolgen für Operation '%s'"
         jpn "操作 '%s' では不正な照合順序の混在です。"
         por "Ilegal combinação de collations para operação '%s'"
         spa "Ilegal mezcla de collations para operación '%s'"
 ER_VARIABLE_IS_NOT_STRUCT  
         eng "Variable '%-.64s' is not a variable component (can't be used as XXXX.variable_name)"
+        nla "Variabele '%-.64s' is niet een variabel component (kan niet gebruikt worden als XXXX.variabele_naam)"
         ger "Variable '%-.64s' ist keine Variablen-Komponente (kann nicht als XXXX.variablen_name verwendet werden)"
         jpn "変数 '%-.64s' は構造変数の構成要素ではありません。(XXXX.変数名 という指定はできません。)"
         por "Variável '%-.64s' não é uma variável componente (Não pode ser usada como XXXX.variável_nome)"
         spa "Variable '%-.64s' no es una variable componente (No puede ser usada como XXXX.variable_name)"
 ER_UNKNOWN_COLLATION  
         eng "Unknown collation: '%-.64s'"
+        nla "Onbekende sorteervolgorde: '%-.64s'"
         ger "Unbekannte Sortierreihenfolge: '%-.64s'"
         jpn "不明な照合順序: '%-.64s'"
         por "Collation desconhecida: '%-.64s'"
         spa "Collation desconocida: '%-.64s'"
 ER_SLAVE_IGNORED_SSL_PARAMS  
         eng "SSL parameters in CHANGE MASTER are ignored because this MySQL slave was compiled without SSL support; they can be used later if MySQL slave with SSL is started"
+        nla "SSL-parameters in CHANGE MASTER worden genegeerd omdate deze MySQL slave is gecompileerd zonder SSL ondersteuning; De parameters kunnen later gebruikt worden als de slave wordt gestart met SSL ondersteuning"
         ger "SSL-Parameter in CHANGE MASTER werden ignoriert, weil dieser MySQL-Slave ohne SSL-Unterstützung kompiliert wurde. Sie können aber später verwendet werden, wenn ein MySQL-Slave mit SSL gestartet wird"
         jpn "このMySQLスレーブはSSLサポートを含めてコンパイルされていないので、CHANGE MASTER のSSLパラメータは無視されました。今後SSLサポートを持つMySQLスレーブを起動する際に利用されます。"
         por "SSL parâmetros em CHANGE MASTER são ignorados porque este escravo MySQL foi compilado sem o SSL suporte. Os mesmos podem ser usados mais tarde quando o escravo MySQL com SSL seja iniciado."
         spa "Parametros SSL en CHANGE MASTER son ignorados porque este slave MySQL fue compilado sin soporte SSL; pueden ser usados despues cuando el slave MySQL con SSL sea inicializado"
 ER_SERVER_IS_IN_SECURE_AUTH_MODE  
         eng "Server is running in --secure-auth mode, but '%s'@'%s' has a password in the old format; please change the password to the new format"
+        nla "Server gebruikt --secure-auth mode, maar '%s'@'%s' heeft een wachtwoord in het oude formaat; verander het wachtwoord naar het nieuwe formaat"
         ger "Server läuft im Modus --secure-auth, aber '%s'@'%s' hat ein Passwort im alten Format. Bitte Passwort ins neue Format ändern"
         jpn "サーバーは --secure-auth モードで稼働しています。しかし '%s'@'%s' は古い形式のパスワードを使用しています。新しい形式のパスワードに変更してください。"
         por "Servidor está rodando em --secure-auth modo, porêm '%s'@'%s' tem senha no formato antigo; por favor troque a senha para o novo formato"
@@ -4955,6 +4979,7 @@ ER_SERVER_IS_IN_SECURE_AUTH_MODE
         spa "Servidor está rodando en modo --secure-auth, pero '%s'@'%s' tiene clave en el antiguo formato; por favor cambie la clave para el nuevo formato"
 ER_WARN_FIELD_RESOLVED  
         eng "Field or reference '%-.192s%s%-.192s%s%-.192s' of SELECT #%d was resolved in SELECT #%d"
+        nla "Veld of referentie '%-.192s%s%-.192s%s%-.192s' van SELECT #%d was resolved in SELECT #%d"
         ger "Feld oder Verweis '%-.192s%s%-.192s%s%-.192s' im SELECT-Befehl Nr. %d wurde im SELECT-Befehl Nr. %d aufgelöst"
         jpn "フィールドまたは参照 '%-.192s%s%-.192s%s%-.192s' は SELECT #%d ではなく、SELECT #%d で解決されました。"
         por "Campo ou referência '%-.192s%s%-.192s%s%-.192s' de SELECT #%d foi resolvido em SELECT #%d"
@@ -4963,24 +4988,28 @@ ER_WARN_FIELD_RESOLVED
         ukr "Стовбець або посилання '%-.192s%s%-.192s%s%-.192s' із SELECTу #%d було знайдене у SELECTі #%d"
 ER_BAD_SLAVE_UNTIL_COND  
         eng "Incorrect parameter or combination of parameters for START SLAVE UNTIL"
+        nla "Ongeldige parameter of combinatie van parameters voor START SLAVE UNTIL"
         ger "Falscher Parameter oder falsche Kombination von Parametern für START SLAVE UNTIL"
         jpn "START SLAVE UNTIL へのパラメータまたはその組み合わせが不正です。"
         por "Parâmetro ou combinação de parâmetros errado para START SLAVE UNTIL"
         spa "Parametro equivocado o combinación de parametros para START SLAVE UNTIL"
 ER_MISSING_SKIP_SLAVE  
         eng "It is recommended to use --skip-slave-start when doing step-by-step replication with START SLAVE UNTIL; otherwise, you will get problems if you get an unexpected slave's mysqld restart"
+        nla "Het is aangeraden om --skip-slave-start te gebruiken bij een stap-voor-stap replicatie met START SLAVE UNTIL; anders kunnen er problemen optreden bij een overwachte mysqld herstart van de slave"
         ger "Es wird empfohlen, mit --skip-slave-start zu starten, wenn mit START SLAVE UNTIL eine Schritt-für-Schritt-Replikation ausgeführt wird. Ansonsten gibt es Probleme, wenn ein Slave-Server unerwartet neu startet"
         jpn "START SLAVE UNTIL で段階的にレプリケーションを行う際には、--skip-slave-start オプションを使うことを推奨します。使わない場合、スレーブのmysqldが不慮の再起動をすると問題が発生します。"
         por "É recomendado para rodar com --skip-slave-start quando fazendo replicação passo-por-passo com START SLAVE UNTIL, de outra forma você não está seguro em caso de inesperada reinicialição do mysqld escravo"
         spa "Es recomendado rodar con --skip-slave-start cuando haciendo replicación step-by-step con START SLAVE UNTIL, a menos que usted no esté seguro en caso de inesperada reinicialización del mysqld slave"
 ER_UNTIL_COND_IGNORED  
         eng "SQL thread is not to be started so UNTIL options are ignored"
+        nla "SQL thread zal niet gestart worden, dus UNTIL opties worden genegeerd"
         ger "SQL-Thread soll nicht gestartet werden. Daher werden UNTIL-Optionen ignoriert"
         jpn "スレーブSQLスレッドが開始されないため、UNTILオプションは無視されました。"
         por "Thread SQL não pode ser inicializado tal que opções UNTIL são ignoradas"
         spa "SQL thread no es inicializado tal que opciones UNTIL son ignoradas"
 ER_WRONG_NAME_FOR_INDEX 42000 
         eng "Incorrect index name '%-.100s'"
+        nla "Ongeldige index naam '%-.100s'"
         ger "Falscher Indexname '%-.100s'"
         jpn "索引名 '%-.100s' は不正です。"
         por "Incorreto nome de índice '%-.100s'"
@@ -4988,6 +5017,7 @@ ER_WRONG_NAME_FOR_INDEX 42000
         swe "Felaktigt index namn '%-.100s'"
 ER_WRONG_NAME_FOR_CATALOG 42000 
         eng "Incorrect catalog name '%-.100s'"
+        nla "Ongeldige catalog naam '%-.100s'"
         ger "Falscher Katalogname '%-.100s'"
         jpn "カタログ名 '%-.100s' は不正です。"
         por "Incorreto nome de catálogo '%-.100s'"
@@ -4995,6 +5025,7 @@ ER_WRONG_NAME_FOR_CATALOG 42000
         swe "Felaktigt katalog namn '%-.100s'"
 ER_WARN_QC_RESIZE  
         eng "Query cache failed to set size %lu; new query cache size is %lu"
+        nla "Het zetten van de query cache grootte op %lu; de nieuwe query cache grootte is %lu"
         ger "Änderung der Query-Cache-Größe auf %lu fehlgeschlagen; neue Query-Cache-Größe ist %lu"
         jpn "クエリキャッシュのサイズを %lu にできませんでした。サイズは %lu になりました。"
         por "Falha em Query cache para configurar tamanho %lu, novo tamanho de query cache é %lu"
@@ -5004,6 +5035,7 @@ ER_WARN_QC_RESIZE
         ukr "Кеш запитів неспроможен встановити розмір %lu, новий розмір кеша запитів - %lu"
 ER_BAD_FT_COLUMN  
         eng "Column '%-.192s' cannot be part of FULLTEXT index"
+        nla "Kolom '%-.192s' mag geen onderdeel zijn van een FULLTEXT index"
         ger "Feld '%-.192s' kann nicht Teil eines FULLTEXT-Index sein"
         jpn "列 '%-.192s' は全文索引のキーにはできません。"
         por "Coluna '%-.192s' não pode ser parte de índice FULLTEXT"
@@ -5011,6 +5043,7 @@ ER_BAD_FT_COLUMN
         swe "Kolumn '%-.192s' kan inte vara del av ett FULLTEXT index"
 ER_UNKNOWN_KEY_CACHE  
         eng "Unknown key cache '%-.100s'"
+        nla "Ongeldige key cache '%-.100s'"
         ger "Unbekannter Schlüssel-Cache '%-.100s'"
         jpn "'%-.100s' は不明なキーキャッシュです。"
         por "Key cache desconhecida '%-.100s'"
@@ -5018,24 +5051,28 @@ ER_UNKNOWN_KEY_CACHE
         swe "Okänd nyckel cache '%-.100s'"
 ER_WARN_HOSTNAME_WONT_WORK  
         eng "MySQL is started in --skip-name-resolve mode; you must restart it without this switch for this grant to work"
+        nla "MySQL is gestart in --skip-name-resolve modus; u dient te herstarten zonder deze optie voordat deze rechten werken"
         ger "MySQL wurde mit --skip-name-resolve gestartet. Diese Option darf nicht verwendet werden, damit diese Rechtevergabe möglich ist"
         jpn "MySQLは --skip-name-resolve モードで起動しています。このオプションを外して再起動しなければ、この権限操作は機能しません。"
         por "MySQL foi inicializado em modo --skip-name-resolve. Você necesita reincializá-lo sem esta opção para este grant funcionar"
         spa "MySQL esta inicializado en modo --skip-name-resolve. Usted necesita reinicializarlo sin esta opción para este derecho funcionar"
 ER_UNKNOWN_STORAGE_ENGINE 42000 
         eng "Unknown storage engine '%s'"
+        nla "Onbekende storage engine '%s'"
         ger "Unbekannte Speicher-Engine '%s'"
         jpn "'%s' は不明なストレージエンジンです。"
         por "Motor de tabela desconhecido '%s'"
         spa "Desconocido motor de tabla '%s'"
 ER_WARN_DEPRECATED_SYNTAX  
         eng "'%s' is deprecated and will be removed in a future release. Please use %s instead"
+        nla "'%s' is verouderd en zal in een toekomstige versie worden verwijderd. U kunt %s gebruiken"
         ger "'%s' ist veraltet. Bitte benutzen Sie '%s'"
         jpn "'%s' は将来のリリースで廃止予定です。代わりに %s を使用してください。"
         por "'%s' é desatualizado. Use '%s' em seu lugar"
         spa "'%s' está desaprobado, use '%s' en su lugar"
 ER_NON_UPDATABLE_TABLE  
         eng "The target table %-.100s of the %s is not updatable"
+        nla "De doel tabel %-.100s van de %s is niet vernieuwbaar"
         ger "Die Zieltabelle %-.100s von %s ist nicht aktualisierbar"
         jpn "対象表 %-.100s は更新可能ではないので、%s を行えません。"
         por "A tabela destino %-.100s do %s não é atualizável"
@@ -5045,6 +5082,7 @@ ER_NON_UPDATABLE_TABLE
         ukr "Таблиця %-.100s у %s не може оновлюватись"
 ER_FEATURE_DISABLED  
         eng "The '%s' feature is disabled; you need MySQL built with '%s' to have it working"
+        nla "De '%s' feature staat uit; u dient MySQL te bouwen met '%s' om dit te kunnen gebruiken"
         ger "Das Feature '%s' ist ausgeschaltet, Sie müssen MySQL mit '%s' übersetzen, damit es verfügbar ist"
         jpn "機能 '%s' は無効です。利用するためには '%s' を含めてビルドしたMySQLが必要です。"
         por "O recurso '%s' foi desativado; você necessita MySQL construído com '%s' para ter isto funcionando"
@@ -5052,6 +5090,7 @@ ER_FEATURE_DISABLED
         swe "'%s' är inte aktiverad; För att aktivera detta måste du bygga om MySQL med '%s' definierad"
 ER_OPTION_PREVENTS_STATEMENT  
         eng "The MySQL server is running with the %s option so it cannot execute this statement"
+        nla "De MySQL server draait met de %s optie en kan daardoor dit statement niet uitvoeren"
         ger "Der MySQL-Server läuft mit der Option %s und kann diese Anweisung deswegen nicht ausführen"
         jpn "MySQLサーバーが %s オプションで実行されているので、このステートメントは実行できません。"
         por "O servidor MySQL está rodando com a opção %s razão pela qual não pode executar esse commando"
@@ -5059,24 +5098,28 @@ ER_OPTION_PREVENTS_STATEMENT
         swe "MySQL är startad med %s. Pga av detta kan du inte använda detta kommando"
 ER_DUPLICATED_VALUE_IN_TYPE  
         eng "Column '%-.100s' has duplicated value '%-.64s' in %s"
+        nla "Kolom '%-.100s' heeft dubbele waarde '%-.64s' in %s"
         ger "Feld '%-.100s' hat doppelten Wert '%-.64s' in %s"
         jpn "列 '%-.100s' で、重複する値 '%-.64s' が %s に指定されています。"
         por "Coluna '%-.100s' tem valor duplicado '%-.64s' em %s"
         spa "Columna '%-.100s' tiene valor doblado '%-.64s' en %s"
 ER_TRUNCATED_WRONG_VALUE 22007 
         eng "Truncated incorrect %-.32s value: '%-.128s'"
+        nla "Ongeldige %-.32s waarde is afgekapt: '%-.128s'"
         ger "Falscher %-.32s-Wert gekürzt: '%-.128s'"
         jpn "不正な %-.32s の値が切り捨てられました。: '%-.128s'"
         por "Truncado errado %-.32s valor: '%-.128s'"
         spa "Equivocado truncado %-.32s valor: '%-.128s'"
 ER_TOO_MUCH_AUTO_TIMESTAMP_COLS  
         eng "Incorrect table definition; there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause"
+        nla "Ongeldige tabeldefinitie; er mag slechts één TIMESTAMP kolom zijn met CURRENT_TIMESTAMP als DEFAULT of als ON UPDATE clausule"
         ger "Fehlerhafte Tabellendefinition. Es kann nur eine einzige TIMESTAMP-Spalte mit CURRENT_TIMESTAMP als DEFAULT oder in einer ON-UPDATE-Klausel geben"
         jpn "不正な表定義です。DEFAULT句またはON UPDATE句に CURRENT_TIMESTAMP をともなうTIMESTAMP型の列は1つまでです。"
         por "Incorreta definição de tabela; Pode ter somente uma coluna TIMESTAMP com CURRENT_TIMESTAMP em DEFAULT ou ON UPDATE cláusula"
         spa "Incorrecta definición de tabla; Solamente debe haber una columna TIMESTAMP con CURRENT_TIMESTAMP en DEFAULT o ON UPDATE cláusula"
 ER_INVALID_ON_UPDATE  
         eng "Invalid ON UPDATE clause for '%-.192s' column"
+        nla "Ongeldige ON UPDATE clausule voor '%-.192s' kolom"
         ger "Ungültige ON-UPDATE-Klausel für Spalte '%-.192s'"
         jpn "列 '%-.192s' に ON UPDATE句は無効です。"
         por "Inválida cláusula ON UPDATE para campo '%-.192s'"
@@ -5084,16 +5127,19 @@ ER_INVALID_ON_UPDATE
 ER_UNSUPPORTED_PS  
         eng "This command is not supported in the prepared statement protocol yet"
         ger "Dieser Befehl wird im Protokoll für vorbereitete Anweisungen noch nicht unterstützt"
+        nla "Dit commando is nog niet ondersteund in het prepared statement protocol"
 ER_GET_ERRMSG  
         dan "Modtog fejl %d '%-.100s' fra %s"
         eng "Got error %d '%-.100s' from %s"
         ger "Fehler %d '%-.100s' von %s"
+        nla "Kreeg fout %d '%-.100s' van %s"
         jpn "エラー %d '%-.100s' が %s から返されました。"
         nor "Mottok feil %d '%-.100s' fa %s"
         norwegian-ny "Mottok feil %d '%-.100s' fra %s"
 ER_GET_TEMPORARY_ERRMSG  
         dan "Modtog temporary fejl %d '%-.100s' fra %s"
         eng "Got temporary error %d '%-.100s' from %s"
+        nla "Kreeg tijdelijke fout %d '%-.100s' van %s"
         jpn "一時エラー %d '%-.100s' が %s から返されました。"
         ger "Temporärer Fehler %d '%-.100s' von %s"
         nor "Mottok temporary feil %d '%-.100s' fra %s"
@@ -5101,137 +5147,181 @@ ER_GET_TEMPORARY_ERRMSG
 ER_UNKNOWN_TIME_ZONE  
         eng "Unknown or incorrect time zone: '%-.64s'"
         ger "Unbekannte oder falsche Zeitzone: '%-.64s'"
+        nla "Onbekende of ongeldige tijdzone: '%-.64s'"
 ER_WARN_INVALID_TIMESTAMP  
         eng "Invalid TIMESTAMP value in column '%s' at row %ld"
         ger "Ungültiger TIMESTAMP-Wert in Feld '%s', Zeile %ld"
+        nla "Ongeldige TIMESTAMP waarde in kolom '%s' op rij %ld"
 ER_INVALID_CHARACTER_STRING  
         eng "Invalid %s character string: '%.64s'"
         ger "Ungültiger %s-Zeichen-String: '%.64s'"
+        nla "Ongeldige %s tekenreeks: '%.64s'"
 ER_WARN_ALLOWED_PACKET_OVERFLOWED  
+        nla "Resultaat van %s() was groter dan max_allowed_packet (%ld) - afgekapt"
         eng "Result of %s() was larger than max_allowed_packet (%ld) - truncated"
         ger "Ergebnis von %s() war größer als max_allowed_packet (%ld) Bytes und wurde deshalb gekürzt"
 ER_CONFLICTING_DECLARATIONS  
         eng "Conflicting declarations: '%s%s' and '%s%s'"
         ger "Widersprüchliche Deklarationen: '%s%s' und '%s%s'"
+        nla "Declaraties komen niet overeen: '%s%s' en '%s%s'"
 ER_SP_NO_RECURSIVE_CREATE 2F003 
         eng "Can't create a %s from within another stored routine"
         ger "Kann kein %s innerhalb einer anderen gespeicherten Routine erzeugen"
+        nla "Kan geen %s aanmaken vanuit een andere stored routine"
 ER_SP_ALREADY_EXISTS 42000 
         eng "%s %s already exists"
         ger "%s %s existiert bereits"
+        nla "%s %s bestaat reeds"
 ER_SP_DOES_NOT_EXIST 42000 
         eng "%s %s does not exist"
         ger "%s %s existiert nicht"
+        nla "%s %s bestaat niet"
 ER_SP_DROP_FAILED  
         eng "Failed to DROP %s %s"
         ger "DROP %s %s ist fehlgeschlagen"
+        nla "DROP %s %s is mislukt"
 ER_SP_STORE_FAILED  
         eng "Failed to CREATE %s %s"
         ger "CREATE %s %s ist fehlgeschlagen"
+        nla "CREATE %s %s is mislukt"
 ER_SP_LILABEL_MISMATCH 42000 
         eng "%s with no matching label: %s"
         ger "%s ohne passende Marke: %s"
+        nla "%s zonder passend label: %s"
 ER_SP_LABEL_REDEFINE 42000 
         eng "Redefining label %s"
         ger "Neudefinition der Marke %s"
+        nla "Vernieuwd label %s"
 ER_SP_LABEL_MISMATCH 42000 
         eng "End-label %s without match"
         ger "Ende-Marke %s ohne zugehörigen Anfang"
+        nla "Eind-markering %s zonder bijbehorend begin"
 ER_SP_UNINIT_VAR 01000 
         eng "Referring to uninitialized variable %s"
         ger "Zugriff auf nichtinitialisierte Variable %s"
+        nla "Verwijzing naar niet-geïnitialiseerde variabele %s"
 ER_SP_BADSELECT 0A000 
         eng "PROCEDURE %s can't return a result set in the given context"
         ger "PROCEDURE %s kann im gegebenen Kontext keine Ergebnismenge zurückgeben"
+        nla "PROCEDURE %s kan in de huidige context geen resultaat teruggeven"
 ER_SP_BADRETURN 42000 
         eng "RETURN is only allowed in a FUNCTION"
         ger "RETURN ist nur innerhalb einer FUNCTION erlaubt"
+        nla "RETURN is enkel toegestaan in een FUNCTION"
 ER_SP_BADSTATEMENT 0A000 
         eng "%s is not allowed in stored procedures"
         ger "%s ist in gespeicherten Prozeduren nicht erlaubt"
+        nla "%s is niet toegestaan in een stored procedure"
 ER_UPDATE_LOG_DEPRECATED_IGNORED 42000 
         eng "The update log is deprecated and replaced by the binary log; SET SQL_LOG_UPDATE has been ignored."
         ger "Das Update-Log ist veraltet und wurde durch das Binär-Log ersetzt. SET SQL_LOG_UPDATE wird ignoriert."
+        nla "De update-log is vervangen door de binary log; SET SQL_LOG_UPDATE wordt genegeerd."
 ER_UPDATE_LOG_DEPRECATED_TRANSLATED 42000 
         eng "The update log is deprecated and replaced by the binary log; SET SQL_LOG_UPDATE has been translated to SET SQL_LOG_BIN."
         ger "Das Update-Log ist veraltet und wurde durch das Binär-Log ersetzt. SET SQL_LOG_UPDATE wurde in SET SQL_LOG_BIN übersetzt."
+        nla "De update-log is vervangen door de binary log; SET SQL_LOG_UPDATE wordt omgexet naar SET SQL_LOG_BIN."
 ER_QUERY_INTERRUPTED 70100 
         eng "Query execution was interrupted"
         ger "Ausführung der Abfrage wurde unterbrochen"
+        nla "Uitvoering van de query is onderbroken"
 ER_SP_WRONG_NO_OF_ARGS 42000 
         eng "Incorrect number of arguments for %s %s; expected %u, got %u"
         ger "Falsche Anzahl von Argumenten für %s %s; erwarte %u, erhalte %u"
+        nla "Ongeldig aantal argumenten voor %s %s; veracht %u, gekregen %u"
 ER_SP_COND_MISMATCH 42000 
         eng "Undefined CONDITION: %s"
         ger "Undefinierte CONDITION: %s"
+        nla "Ongedefinieerde CONDITION: %s"
 ER_SP_NORETURN 42000 
         eng "No RETURN found in FUNCTION %s"
         ger "Kein RETURN in FUNCTION %s gefunden"
+        nla "Geen RETURN in FUNCTION %s gevonden"
 ER_SP_NORETURNEND 2F005 
         eng "FUNCTION %s ended without RETURN"
         ger "FUNCTION %s endete ohne RETURN"
+        nla "FUNCTION %s eindigd zonder RETURN"
 ER_SP_BAD_CURSOR_QUERY 42000 
         eng "Cursor statement must be a SELECT"
         ger "Cursor-Anweisung muss ein SELECT sein"
+        nla "Cursor statement moet een SELECT zijn"
 ER_SP_BAD_CURSOR_SELECT 42000 
         eng "Cursor SELECT must not have INTO"
         ger "Cursor-SELECT darf kein INTO haben"
+        nla "Cursor SELECT kan geen INTO hebben"
 ER_SP_CURSOR_MISMATCH 42000 
         eng "Undefined CURSOR: %s"
         ger "Undefinierter CURSOR: %s"
+        nla "Ongedifinieerde CURSOR: %s"
 ER_SP_CURSOR_ALREADY_OPEN 24000 
         eng "Cursor is already open"
         ger "Cursor ist schon geöffnet"
+        nla "Cursor is reeds geopend"
 ER_SP_CURSOR_NOT_OPEN 24000 
         eng "Cursor is not open"
         ger "Cursor ist nicht geöffnet"
+        nla "Cursor is niet geopend"
 ER_SP_UNDECLARED_VAR 42000 
         eng "Undeclared variable: %s"
         ger "Nicht deklarierte Variable: %s"
+        nla "Niet gedeclareerde variabele: %s"
 ER_SP_WRONG_NO_OF_FETCH_ARGS  
         eng "Incorrect number of FETCH variables"
         ger "Falsche Anzahl von FETCH-Variablen"
+        nla "Ongeldig aantal FETCH variabelen"
 ER_SP_FETCH_NO_DATA 02000 
         eng "No data - zero rows fetched, selected, or processed"
         ger "Keine Daten - null Zeilen geholt (fetch), ausgewählt oder verarbeitet"
+        nla "Geen data - nul rijen opgehaald, geselecteerd of verwerkt"
 ER_SP_DUP_PARAM 42000 
         eng "Duplicate parameter: %s"
         ger "Doppelter Parameter: %s"
+        nla "Dubbele parameter: %s"
 ER_SP_DUP_VAR 42000 
         eng "Duplicate variable: %s"
         ger "Doppelte Variable: %s"
+        nla "Dubbele vaiabele: %s"
 ER_SP_DUP_COND 42000 
         eng "Duplicate condition: %s"
         ger "Doppelte Bedingung: %s"
+        nla "Dubbele conditie: %s"
 ER_SP_DUP_CURS 42000 
         eng "Duplicate cursor: %s"
         ger "Doppelter Cursor: %s"
+        nla "Dubbele cursor: %s"
 ER_SP_CANT_ALTER  
         eng "Failed to ALTER %s %s"
         ger "ALTER %s %s fehlgeschlagen"
+        nla "ALTER %s %s is mislukt"
 ER_SP_SUBSELECT_NYI 0A000 
         eng "Subquery value not supported"
         ger "Subquery-Wert wird nicht unterstützt"
+        nla "Subquery waarde wordt niet ondersteund"
 ER_STMT_NOT_ALLOWED_IN_SF_OR_TRG 0A000
         eng "%s is not allowed in stored function or trigger"
         ger "%s ist in gespeicherten Funktionen und in Triggern nicht erlaubt"
+        nla "%s is niet toegestaan in een stored function of trigger"
 ER_SP_VARCOND_AFTER_CURSHNDLR 42000 
         eng "Variable or condition declaration after cursor or handler declaration"
         ger "Deklaration einer Variablen oder einer Bedingung nach der Deklaration eines Cursors oder eines Handlers"
+        nla "Declaratie van een variabele of een conditie na een handler declaratie"
 ER_SP_CURSOR_AFTER_HANDLER 42000 
         eng "Cursor declaration after handler declaration"
         ger "Deklaration eines Cursors nach der Deklaration eines Handlers"
+        nla "Cursor declaratie na een handler declaratie"
 ER_SP_CASE_NOT_FOUND 20000 
         eng "Case not found for CASE statement"
         ger "Fall für CASE-Anweisung nicht gefunden"
+        nla "Case niet gevonden voor CASE statement"
 ER_FPARSER_TOO_BIG_FILE  
         eng "Configuration file '%-.192s' is too big"
         ger "Konfigurationsdatei '%-.192s' ist zu groß"
+        nla "Configuratie bestand '%-.192s' is te groot"
         rus "Слишком большой конфигурационный файл '%-.192s'"
         ukr "Занадто великий конфігураційний файл '%-.192s'"
 ER_FPARSER_BAD_HEADER  
         eng "Malformed file type header in file '%-.192s'"
         ger "Nicht wohlgeformter Dateityp-Header in Datei '%-.192s'"
+        nla "Onjuiste bestandstype header in bestand '%-.192s'"
         rus "Неверный заголовок типа файла '%-.192s'"
         ukr "Невірний заголовок типу у файлі '%-.192s'"
 ER_FPARSER_EOF_IN_COMMENT  
@@ -5239,110 +5329,137 @@ ER_FPARSER_EOF_IN_COMMENT
         ger "Unerwartetes Dateiende beim Parsen des Kommentars '%-.200s'"
         rus "Неожиданный конец файла в коментарии '%-.200s'"
         ukr "Несподіванний кінець файлу у коментарі '%-.200s'"
+        nla "Onverwacht einde van bestand tijds het lezen van commentaar '%-.200s'"
 ER_FPARSER_ERROR_IN_PARAMETER  
         eng "Error while parsing parameter '%-.192s' (line: '%-.192s')"
         ger "Fehler beim Parsen des Parameters '%-.192s' (Zeile: '%-.192s')"
+        nla "Fout bij het lezen van parameter '%-.192s' (regel: '%-.192s')"
         rus "Ошибка при распознавании параметра '%-.192s' (строка: '%-.192s')"
         ukr "Помилка в роспізнаванні параметру '%-.192s' (рядок: '%-.192s')"
 ER_FPARSER_EOF_IN_UNKNOWN_PARAMETER  
         eng "Unexpected end of file while skipping unknown parameter '%-.192s'"
         ger "Unerwartetes Dateiende beim Überspringen des unbekannten Parameters '%-.192s'"
+        nla "Onverwacht einde van bestand bij het overslaan van onverwachte parameter '%-.192s'"
         rus "Неожиданный конец файла при пропуске неизвестного параметра '%-.192s'"
         ukr "Несподіванний кінець файлу у спробі проминути невідомий параметр '%-.192s'"
 ER_VIEW_NO_EXPLAIN  
         eng "EXPLAIN/SHOW can not be issued; lacking privileges for underlying table"
         ger "EXPLAIN/SHOW kann nicht verlangt werden. Rechte für zugrunde liegende Tabelle fehlen"
+        nla "EXPLAIN/SHOW kan niet uitgevoerd worden. Rechten op onderliggnde tabel missen"
         rus "EXPLAIN/SHOW не может быть выполненно; недостаточно прав на такблицы запроса"
         ukr "EXPLAIN/SHOW не може бути віконано; немає прав на тиблиці запиту"
 ER_FRM_UNKNOWN_TYPE  
         eng "File '%-.192s' has unknown type '%-.64s' in its header"
+        nla "Bestand '%-.192s' heeft onbekend type '%-.64s' in de header"
         ger "Datei '%-.192s' hat unbekannten Typ '%-.64s' im Header"
         rus "Файл '%-.192s' содержит неизвестный тип '%-.64s' в заголовке"
         ukr "Файл '%-.192s' має невідомий тип '%-.64s' у заголовку"
 ER_WRONG_OBJECT  
         eng "'%-.192s.%-.192s' is not %s"
         ger "'%-.192s.%-.192s' ist nicht %s"
+        nla "'%-.192s.%-.192s' is geen %s"
         rus "'%-.192s.%-.192s' - не %s"
         ukr "'%-.192s.%-.192s' не є %s"
 ER_NONUPDATEABLE_COLUMN  
         eng "Column '%-.192s' is not updatable"
         ger "Feld '%-.192s' ist nicht aktualisierbar"
+        nla "Kolom '%.192s' is niet vernieuwbaar"
         rus "Столбец '%-.192s' не обновляемый"
         ukr "Стовбець '%-.192s' не може бути зминений"
 # Unused since MySQL 5.8.0
 ER_VIEW_SELECT_DERIVED_UNUSED
         eng "View's SELECT contains a subquery in the FROM clause"
         ger "SELECT der View enthält eine Subquery in der FROM-Klausel"
+        nla "SELECT van de view bevat een subquery inde FROM-clausule"
         rus "View SELECT содержит подзапрос в конструкции FROM"
         ukr "View SELECT має підзапит у конструкції FROM"
 ER_VIEW_SELECT_CLAUSE  
         eng "View's SELECT contains a '%s' clause"
         ger "SELECT der View enthält eine '%s'-Klausel"
+        nla "SELECT van de view bevan een '%s'-clausule"
         rus "View SELECT содержит конструкцию '%s'"
         ukr "View SELECT має конструкцію '%s'"
 ER_VIEW_SELECT_VARIABLE  
         eng "View's SELECT contains a variable or parameter"
         ger "SELECT der View enthält eine Variable oder einen Parameter"
+        nla "SELECT van de view bevat een variabele of parameter"
         rus "View SELECT содержит переменную или параметр"
         ukr "View SELECT має зминну або параметер"
 ER_VIEW_SELECT_TMPTABLE  
         eng "View's SELECT refers to a temporary table '%-.192s'"
         ger "SELECT der View verweist auf eine temporäre Tabelle '%-.192s'"
+        nla "SELECT van de view verwijst naar een tijdelijke tabel '%-.192s'"
         rus "View SELECT содержит ссылку на временную таблицу '%-.192s'"
         ukr "View SELECT використовує тимчасову таблицю '%-.192s'"
 ER_VIEW_WRONG_LIST  
         eng "View's SELECT and view's field list have different column counts"
         ger "SELECT- und Feldliste der Views haben unterschiedliche Anzahlen von Spalten"
+        nla "De lijst met velden van de view en SELECT hebben een ongelijk aantal"
         rus "View SELECT и список полей view имеют разное количество столбцов"
         ukr "View SELECT і перелік стовбців view мають різну кількість сковбців"
 ER_WARN_VIEW_MERGE  
         eng "View merge algorithm can't be used here for now (assumed undefined algorithm)"
         ger "View-Merge-Algorithmus kann hier momentan nicht verwendet werden (undefinierter Algorithmus wird angenommen)"
+        nla "View merge algoritme kan hier momenteel niet gebruikt worden (ongedefinieerd algoritme wordt aangenomen)"
         rus "Алгоритм слияния view не может быть использован сейчас (алгоритм будет неопеределенным)"
         ukr "Алгоритм зливання view не може бути використаний зараз (алгоритм буде невизначений)"
 ER_WARN_VIEW_WITHOUT_KEY  
         eng "View being updated does not have complete key of underlying table in it"
         ger "Die aktualisierte View enthält nicht den vollständigen Schlüssel der zugrunde liegenden Tabelle"
+        nla "De view die vernieuwd wordt heeft niet de volledige sleutel van de onderliggende tabel"
         rus "Обновляемый view не содержит ключа использованных(ой) в нем таблиц(ы)"
         ukr "View, що оновлюеться, не містить повного ключа таблиці(ь), що викорістана в ньюому"
 ER_VIEW_INVALID  
         eng "View '%-.192s.%-.192s' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them"
+        nla "View '%-.192s.%-.192s' gebruikt ongeldige tabel(len) of kolom(men) of functie(s) of de definer/invoker van view heeft geen rechten om deze te gebruiken"
 ER_SP_NO_DROP_SP  
         eng "Can't drop or alter a %s from within another stored routine"
         ger "Kann eine %s nicht von innerhalb einer anderen gespeicherten Routine löschen oder ändern"
+        nla "Kan %s niet verwijderen of aanpassen vanuit een andere stored routine"
 ER_SP_GOTO_IN_HNDLR  
         eng "GOTO is not allowed in a stored procedure handler"
         ger "GOTO ist im Handler einer gespeicherten Prozedur nicht erlaubt"
+        nla "GOTO is niet toegestaan in een stored procedure handler"
 ER_TRG_ALREADY_EXISTS  
         eng "Trigger already exists"
         ger "Trigger existiert bereits"
+        nla "Trigger bestaat reeds"
 ER_TRG_DOES_NOT_EXIST  
         eng "Trigger does not exist"
         ger "Trigger existiert nicht"
+        nla "Trigger bestaat niet"
 ER_TRG_ON_VIEW_OR_TEMP_TABLE  
         eng "Trigger's '%-.192s' is view or temporary table"
         ger "'%-.192s' des Triggers ist View oder temporäre Tabelle"
+        nla "De '%-.192s' van de trigger is een view of tijdelijke tabel"
 ER_TRG_CANT_CHANGE_ROW  
         eng "Updating of %s row is not allowed in %strigger"
         ger "Aktualisieren einer %s-Zeile ist in einem %s-Trigger nicht erlaubt"
+        nla "Vernieuwen van %s-rij is niet toegestaan in %s-trigger"
 ER_TRG_NO_SUCH_ROW_IN_TRG  
         eng "There is no %s row in %s trigger"
         ger "Es gibt keine %s-Zeile im %s-Trigger"
+        nla "Er is geen %s-rij in %s-trigger"
 ER_NO_DEFAULT_FOR_FIELD  
         eng "Field '%-.192s' doesn't have a default value"
         ger "Feld '%-.192s' hat keinen Vorgabewert"
+        nla "Veld '%-.192s' heeft geen standaard waarde"
 ER_DIVISION_BY_ZERO 22012 
         eng "Division by 0"
         ger "Division durch 0"
+        nla "Deling door 0"
 ER_TRUNCATED_WRONG_VALUE_FOR_FIELD  
         eng "Incorrect %-.32s value: '%-.128s' for column '%.192s' at row %ld"
         ger "Falscher %-.32s-Wert: '%-.128s' für Feld '%.192s' in Zeile %ld"
+        nla "Ongeldige %-.32s waarde: '%-.128s' voor kolom '%.192s' op rij %ld"
 ER_ILLEGAL_VALUE_FOR_TYPE 22007 
         eng "Illegal %s '%-.192s' value found during parsing"
         ger "Nicht zulässiger %s-Wert '%-.192s' beim Parsen gefunden"
+        nla "Ongeldige %s '%-.192s' waarde tijdens verwerken"
 ER_VIEW_NONUPD_CHECK  
         eng "CHECK OPTION on non-updatable view '%-.192s.%-.192s'"
         ger "CHECK OPTION auf nicht-aktualisierbarem View '%-.192s.%-.192s'"
+        nla "CHECK OPTION bij niet-vernieuwbare view '%-.192s.%-.192s'"
         rus "CHECK OPTION для необновляемого VIEW '%-.192s.%-.192s'"
         ukr "CHECK OPTION для VIEW '%-.192s.%-.192s' що не може бути оновленним"
 ER_VIEW_CHECK_FAILED  
@@ -5350,409 +5467,535 @@ ER_VIEW_CHECK_FAILED
         ger "CHECK OPTION fehlgeschlagen: '%-.192s.%-.192s'"
         rus "проверка CHECK OPTION для VIEW '%-.192s.%-.192s' провалилась"
         ukr "Перевірка CHECK OPTION для VIEW '%-.192s.%-.192s' не пройшла"
+        nla "CHECK OPTION mislukt '%-.192s.%-.192s'"
 ER_PROCACCESS_DENIED_ERROR 42000 
         eng "%-.16s command denied to user '%-.48s'@'%-.64s' for routine '%-.192s'"
         ger "Befehl %-.16s nicht zulässig für Benutzer '%-.48s'@'%-.64s' in Routine '%-.192s'"
+        nla "%-.16s commando niet toegestaan voor gebruiker '%-.48s'@'%-.64s' voor routine '%-.192s'"
 ER_RELAY_LOG_FAIL  
         eng "Failed purging old relay logs: %s"
         ger "Bereinigen alter Relais-Logs fehlgeschlagen: %s"
+        nla "Het verwijderen van oude relay-logs is mislukt: %s"
 ER_PASSWD_LENGTH  
         eng "Password hash should be a %d-digit hexadecimal number"
         ger "Passwort-Hash sollte eine Hexdaezimalzahl mit %d Stellen sein"
+        nla "Wachtwooord-hash dient een %d-cijferig hexadecimaal nummer te zijn"
 ER_UNKNOWN_TARGET_BINLOG  
         eng "Target log not found in binlog index"
         ger "Ziel-Log im Binlog-Index nicht gefunden"
+        nla "Doel-log is niet gevonden in de binlog-index"
 ER_IO_ERR_LOG_INDEX_READ  
         eng "I/O error reading log index file"
         ger "Fehler beim Lesen der Log-Index-Datei"
+        nla "I/O fout bij lezen van log index bestand"
 ER_BINLOG_PURGE_PROHIBITED  
         eng "Server configuration does not permit binlog purge"
         ger "Server-Konfiguration erlaubt keine Binlog-Bereinigung"
+        nla "Server configuratie staat geen verwijdering van binlog toe"
 ER_FSEEK_FAIL  
         eng "Failed on fseek()"
+        nla "fseek() is mislukt"
         ger "fseek() fehlgeschlagen"
 ER_BINLOG_PURGE_FATAL_ERR  
         eng "Fatal error during log purge"
         ger "Schwerwiegender Fehler bei der Log-Bereinigung"
+        nla "Fatale tijdens het verwijderen van logbestand"
 ER_LOG_IN_USE  
         eng "A purgeable log is in use, will not purge"
         ger "Ein zu bereinigendes Log wird gerade benutzt, daher keine Bereinigung"
+        nla "Een verwijderbaar logbestand is in gebruik, deze wordt niet verwijderd"
 ER_LOG_PURGE_UNKNOWN_ERR  
         eng "Unknown error during log purge"
         ger "Unbekannter Fehler bei Log-Bereinigung"
+        nla "Onbekende fout tijdens het verwijderen van logbestand"
 ER_RELAY_LOG_INIT  
         eng "Failed initializing relay log position: %s"
         ger "Initialisierung der Relais-Log-Position fehlgeschlagen: %s"
+        nla "Het initialiseren van relay log positie is mislukt: %s"
 ER_NO_BINARY_LOGGING  
         eng "You are not using binary logging"
         ger "Sie verwenden keine Binärlogs"
+        nla "U heeft geen binary logging in gebruik"
 ER_RESERVED_SYNTAX  
         eng "The '%-.64s' syntax is reserved for purposes internal to the MySQL server"
         ger "Die Schreibweise '%-.64s' ist für interne Zwecke des MySQL-Servers reserviert"
+        nla "De '%-.64s' syntax is gereserveerd voor interne MySQL server doeleinden"
 ER_WSAS_FAILED  
         eng "WSAStartup Failed"
         ger "WSAStartup fehlgeschlagen"
+        nla "WSAStartup mislukt"
 ER_DIFF_GROUPS_PROC  
         eng "Can't handle procedures with different groups yet"
         ger "Kann Prozeduren mit unterschiedlichen Gruppen noch nicht verarbeiten"
+        nla "Er is nog geen ondersteuning voor procedures met verschillende groepen"
 ER_NO_GROUP_FOR_PROC  
         eng "Select must have a group with this procedure"
         ger "SELECT muss bei dieser Prozedur ein GROUP BY haben"
+        nla "SELECT moet een GROUP BY hebben voor deze procedure"
 ER_ORDER_WITH_PROC  
         eng "Can't use ORDER clause with this procedure"
         ger "Kann bei dieser Prozedur keine ORDER-BY-Klausel verwenden"
+        nla "Kan geen ORDER BY gebruiken in deze procedure"
 ER_LOGGING_PROHIBIT_CHANGING_OF  
         eng "Binary logging and replication forbid changing the global server %s"
         ger "Binärlogs und Replikation verhindern Wechsel des globalen Servers %s"
+        nla "Binary logging en replicatie verbiedt het wijzigen van global server %s"
 ER_NO_FILE_MAPPING  
         eng "Can't map file: %-.200s, errno: %d"
         ger "Kann Datei nicht abbilden: %-.200s, Fehler: %d"
+        nla "map-operatie op bestand mislukt: %-.200s, fout: %d"
 ER_WRONG_MAGIC  
         eng "Wrong magic in %-.64s"
         ger "Falsche magische Zahlen in %-.64s"
+        nla "Foute magic code in %-.64s"
 ER_PS_MANY_PARAM  
         eng "Prepared statement contains too many placeholders"
         ger "Vorbereitete Anweisung enthält zu viele Platzhalter"
+        nla "Prepared statement heeft te veel placeholders"
 ER_KEY_PART_0  
         eng "Key part '%-.192s' length cannot be 0"
         ger "Länge des Schlüsselteils '%-.192s' kann nicht 0 sein"
+        nla "De lengte van sleuteldeel '%-.192s' mag niet 0 zijn"
 ER_VIEW_CHECKSUM  
         eng "View text checksum failed"
         ger "View-Text-Prüfsumme fehlgeschlagen"
+        nla "View-text-checksum mislukt"
         rus "Проверка контрольной суммы текста VIEW провалилась"
         ukr "Перевірка контрольної суми тексту VIEW не пройшла"
 ER_VIEW_MULTIUPDATE  
         eng "Can not modify more than one base table through a join view '%-.192s.%-.192s'"
         ger "Kann nicht mehr als eine Basistabelle über Join-View '%-.192s.%-.192s' ändern"
+        nla "Het is niet mogelijk om meer dan een basis tabel aan te passen door een join view '%-.192s.%-.192s'"
         rus "Нельзя изменить больше чем одну базовую таблицу используя многотабличный VIEW '%-.192s.%-.192s'"
         ukr "Неможливо оновити більш ниж одну базову таблицю выкористовуючи VIEW '%-.192s.%-.192s', що містіть декілька таблиць"
 ER_VIEW_NO_INSERT_FIELD_LIST  
         eng "Can not insert into join view '%-.192s.%-.192s' without fields list"
         ger "Kann nicht ohne Feldliste in Join-View '%-.192s.%-.192s' einfügen"
+        nla "Een insert in join view '%-.192s.%-192s' is niet mogelijk zonder veldlijst"
         rus "Нельзя вставлять записи в многотабличный VIEW '%-.192s.%-.192s' без списка полей"
         ukr "Неможливо уставити рядки у VIEW '%-.192s.%-.192s', що містить декілька таблиць, без списку стовбців"
 ER_VIEW_DELETE_MERGE_VIEW  
         eng "Can not delete from join view '%-.192s.%-.192s'"
         ger "Kann nicht aus Join-View '%-.192s.%-.192s' löschen"
+        nla "Verwijderen uit join view '%-.192s.%-.192s' is niet mogelijk"
         rus "Нельзя удалять из многотабличного VIEW '%-.192s.%-.192s'"
         ukr "Неможливо видалити рядки у VIEW '%-.192s.%-.192s', що містить декілька таблиць"
 ER_CANNOT_USER  
         eng "Operation %s failed for %.256s"
         ger "Operation %s schlug fehl für %.256s"
+        nla "Operatie %s mislukt voor %.256s"
         norwegian-ny "Operation %s failed for '%.256s'"
 ER_XAER_NOTA XAE04
         eng "XAER_NOTA: Unknown XID"
         ger "XAER_NOTA: Unbekannte XID"
+        nla "XAER_NOTA: Onbekende XID"
 ER_XAER_INVAL XAE05
         eng "XAER_INVAL: Invalid arguments (or unsupported command)"
         ger "XAER_INVAL: Ungültige Argumente (oder nicht unterstützter Befehl)"
+        nla "XAER_INVAL: Ongeldige argumenten (of niet ondersteund commando)"
 ER_XAER_RMFAIL XAE07
         eng "XAER_RMFAIL: The command cannot be executed when global transaction is in the  %.64s state"
         ger "XAER_RMFAIL: DEr Befehl kann nicht ausgeführt werden, wenn die globale Transaktion im Zustand %.64s ist"
+        nla "XAER_RMFAIL: Het commando kan niet worden uitgevoerd zolang de globale transactie in de %.64s staat is"
         rus "XAER_RMFAIL: эту команду нельзя выполнять когда глобальная транзакция находится в состоянии '%.64s'"
 ER_XAER_OUTSIDE XAE09
         eng "XAER_OUTSIDE: Some work is done outside global transaction"
         ger "XAER_OUTSIDE: Einige Arbeiten werden außerhalb der globalen Transaktion verrichtet"
+        nla "XAER_OUTSIDE: Er zijn aanpassingen gedaan buiten de globale transactie"
 ER_XAER_RMERR XAE03
         eng "XAER_RMERR: Fatal error occurred in the transaction branch - check your data for consistency"
         ger "XAER_RMERR: Schwerwiegender Fehler im Transaktionszweig - prüfen Sie Ihre Daten auf Konsistenz"
+        nla "XAER_RMERR: Fatale fout in de transactietak - controleer de consistentie van uw data"
 ER_XA_RBROLLBACK XA100
         eng "XA_RBROLLBACK: Transaction branch was rolled back"
         ger "XA_RBROLLBACK: Transaktionszweig wurde zurückgerollt"
+        nla "XA_RBROLLBACK: Transactietak was teruggerold"
 ER_NONEXISTING_PROC_GRANT 42000 
         eng "There is no such grant defined for user '%-.48s' on host '%-.64s' on routine '%-.192s'"
         ger "Es gibt diese Berechtigung für Benutzer '%-.48s' auf Host '%-.64s' für Routine '%-.192s' nicht"
+        nla "Er zijn geen rechten gedefinieerd voor gebruiker '%-.48s' op host '%-.64s' op routine '%-.192s'"
 ER_PROC_AUTO_GRANT_FAIL
         eng "Failed to grant EXECUTE and ALTER ROUTINE privileges"
         ger "Gewährung von EXECUTE- und ALTER-ROUTINE-Rechten fehlgeschlagen"
+        nla "Het toekennen van EXECUTE en ALTER ROUTINE rechten is mislukt"
 ER_PROC_AUTO_REVOKE_FAIL
         eng "Failed to revoke all privileges to dropped routine"
         ger "Rücknahme aller Rechte für die gelöschte Routine fehlgeschlagen"
+        nla "Het intrekken van rechten op de verwijderde routine is mislukt"
 ER_DATA_TOO_LONG 22001
         eng "Data too long for column '%s' at row %ld"
         ger "Daten zu lang für Feld '%s' in Zeile %ld"
+        nla "Gegevens te lang voor kolom '%s' op rij %ld"
 ER_SP_BAD_SQLSTATE 42000
         eng "Bad SQLSTATE: '%s'"
         ger "Ungültiger SQLSTATE: '%s'"
+        nla "Ongeldige SQLSTATE: '%s'"
 ER_STARTUP
         eng "%s: ready for connections.\nVersion: '%s'  socket: '%s'  port: %d  %s"
         ger "%s: bereit für Verbindungen.\nVersion: '%s'  Socket: '%s'  Port: %d  %s"
+        nla "%s: klaar voor verbindingen.\nVersie: '%s'  socket: '%s'  poort: %d  %s"
 ER_LOAD_FROM_FIXED_SIZE_ROWS_TO_VAR
         eng "Can't load value from file with fixed size rows to variable"
         ger "Kann Wert aus Datei mit Zeilen fester Größe nicht in Variable laden"
+        nla "Het is niet mogelijk om waarde uit een bestand met vaste gegevens grootte te laden in variabele"
 ER_CANT_CREATE_USER_WITH_GRANT 42000
         eng "You are not allowed to create a user with GRANT"
         ger "Sie dürfen keinen Benutzer mit GRANT anlegen"
+        nla "U hebt geen rechten om een gebruiker aan te maken met GRANT"
 ER_WRONG_VALUE_FOR_TYPE  
         eng "Incorrect %-.32s value: '%-.128s' for function %-.32s"
         ger "Falscher %-.32s-Wert: '%-.128s' für Funktion %-.32s"
+        nla "Ongeldige %-.32s waarde: '%-.128s' voor functie %-.32s"
 ER_TABLE_DEF_CHANGED
         eng "Table definition has changed, please retry transaction"
         ger "Tabellendefinition wurde geändert, bitte starten Sie die Transaktion neu"
+        nla "Tabel definitie is veranderd, probeer de transactie opnieuw"
 ER_SP_DUP_HANDLER 42000
         eng "Duplicate handler declared in the same block"
         ger "Doppelter Handler im selben Block deklariert"
+        nla "Dubbele handler declaratie in hetzelfde blok"
 ER_SP_NOT_VAR_ARG 42000
         eng "OUT or INOUT argument %d for routine %s is not a variable or NEW pseudo-variable in BEFORE trigger"
         ger "OUT- oder INOUT-Argument %d für Routine %s ist keine Variable"
+        nla "OUT- of INOUT-argument %d voor routine %s is geen variable of NEW pseudo-variable in BEFORE trigger"
 ER_SP_NO_RETSET 0A000
         eng "Not allowed to return a result set from a %s"
         ger "Rückgabe einer Ergebnismenge aus einer %s ist nicht erlaubt"
+        nla "Het is niet toegestaan om een resultaat terug te sturen van een %s"
 ER_CANT_CREATE_GEOMETRY_OBJECT 22003 
         eng "Cannot get geometry object from data you send to the GEOMETRY field"
         ger "Kann kein Geometrieobjekt aus den Daten machen, die Sie dem GEOMETRY-Feld übergeben haben"
+        nla "Kan geen geometrieobject uit de data construeren van het GEOMETRY veld"
 ER_FAILED_ROUTINE_BREAK_BINLOG
         eng "A routine failed and has neither NO SQL nor READS SQL DATA in its declaration and binary logging is enabled; if non-transactional tables were updated, the binary log will miss their changes"
         ger "Eine Routine, die weder NO SQL noch READS SQL DATA in der Deklaration hat, schlug fehl und Binärlogging ist aktiv. Wenn Nicht-Transaktions-Tabellen aktualisiert wurden, enthält das Binärlog ihre Änderungen nicht"
+        nla "Een routine is mislukt en heeft geen NO SQL of READS SQL DATA in de declaratie en binaire logging staat aan; als niet-transactionele tabellen zijn aangepast dan mist dit in de binaire logs"
 ER_BINLOG_UNSAFE_ROUTINE
         eng "This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable)"
         ger "Diese Routine hat weder DETERMINISTIC, NO SQL noch READS SQL DATA in der Deklaration und Binärlogging ist aktiv (*vielleicht* sollten Sie die weniger sichere Variable log_bin_trust_function_creators verwenden)"
+        nla "Deze functie heeft geen DETERMINISTIC, NO SQL of READS SQL DATA in zijn declaratie en binaire logs staan aan (*misschien* is de minder veilige log_bin_trust_function_creators variabele van toepassing)"
 ER_BINLOG_CREATE_ROUTINE_NEED_SUPER
         eng "You do not have the SUPER privilege and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable)"
+        nla "U heeft geen SUPER privilege en binaire logging is in gebruik (*misschien* wilt u de minder veilige log_bin_trust_function_creators variabele gebruiken)"
         ger "Sie haben keine SUPER-Berechtigung und Binärlogging ist aktiv (*vielleicht* sollten Sie die weniger sichere Variable log_bin_trust_function_creators verwenden)"
 ER_EXEC_STMT_WITH_OPEN_CURSOR
         eng "You can't execute a prepared statement which has an open cursor associated with it. Reset the statement to re-execute it."
+        nla "Het is niet mogelijk om een prepared statement uit te voeren als er een open cursor mee geassosieerd is. Reset het statement om het opnieuw uit te voeren."
         ger "Sie können keine vorbereitete Anweisung ausführen, die mit einem geöffneten Cursor verknüpft ist. Setzen Sie die Anweisung zurück, um sie neu auszuführen"
 ER_STMT_HAS_NO_OPEN_CURSOR
         eng "The statement (%lu) has no open cursor."
         ger "Die Anweisung (%lu) hat keinen geöffneten Cursor"
+        nla "Het statement (%lu) heeft geen open cursor."
 ER_COMMIT_NOT_ALLOWED_IN_SF_OR_TRG
         eng "Explicit or implicit commit is not allowed in stored function or trigger."
         ger "Explizites oder implizites Commit ist in gespeicherten Funktionen und in Triggern nicht erlaubt"
+        nla "Expliciet of impliciet commit is niet toegestaan in een stored function of trigger."
 ER_NO_DEFAULT_FOR_VIEW_FIELD
         eng "Field of view '%-.192s.%-.192s' underlying table doesn't have a default value"
         ger "Ein Feld der dem View '%-.192s.%-.192s' zugrundeliegenden Tabelle hat keinen Vorgabewert"
+        nla "Een veld van onderliggende tabel van view '%-.192s.%-.192s' heeft geen standaard waarde"
 ER_SP_NO_RECURSION
         eng "Recursive stored functions and triggers are not allowed."
         ger "Rekursive gespeicherte Routinen und Triggers sind nicht erlaubt"
+        nla "Recursieve stored functions en triggers zijn niet toegestaan."
 ER_TOO_BIG_SCALE 42000 S1009
         eng "Too big scale %d specified for column '%-.192s'. Maximum is %lu."
+        nla "Te grote schaal opgegeven voor kolom '%-.192s'. Maximum is %lu."
         ger "Zu großer Skalierungsfaktor %d für Feld '%-.192s' angegeben. Maximum ist %lu"
 ER_TOO_BIG_PRECISION 42000 S1009
         eng "Too-big precision %d specified for '%-.192s'. Maximum is %lu."
+        nla "Te grote nauwkeurigheid %d opgegeven voor '%-.192s'. Maximum is %lu."
         ger "Zu große Genauigkeit %d für Feld '%-.192s' angegeben. Maximum ist %lu"
 ER_M_BIGGER_THAN_D 42000 S1009
         eng "For float(M,D), double(M,D) or decimal(M,D), M must be >= D (column '%-.192s')."
         ger "Für FLOAT(M,D), DOUBLE(M,D) oder DECIMAL(M,D) muss M >= D sein (Feld '%-.192s')"
+        nla "Voor FLOAT(M,D), DOUBLE(M,D) of DECIMAL(M,D) dient M >= D te zijn (Veld '%-.192s')"
 ER_WRONG_LOCK_OF_SYSTEM_TABLE
         eng "You can't combine write-locking of system tables with other tables or lock types"
 	ger "Sie können Schreibsperren auf der Systemtabelle nicht mit anderen Tabellen kombinieren"
+        nla "Het is niet mogelijk om schijf-lock van systeem tabellen te combineren met andere tabellen of lock types"
 ER_CONNECT_TO_FOREIGN_DATA_SOURCE
         eng "Unable to connect to foreign data source: %.64s"
         ger "Kann nicht mit Fremddatenquelle verbinden: %.64s"
+        nla "Verbinden met foreign databron mislukt: %.64s"
 ER_QUERY_ON_FOREIGN_DATA_SOURCE
         eng "There was a problem processing the query on the foreign data source. Data source error: %-.64s"
         ger "Bei der Verarbeitung der Abfrage ist in der Fremddatenquelle ein Problem aufgetreten. Datenquellenfehlermeldung: %-.64s"
+        nla "Er was een probleem met het verwerken van de query op de foreign data bron. Databron fout: %-.64s"
 ER_FOREIGN_DATA_SOURCE_DOESNT_EXIST
         eng "The foreign data source you are trying to reference does not exist. Data source error:  %-.64s"
         ger "Die Fremddatenquelle, auf die Sie zugreifen wollen, existiert nicht. Datenquellenfehlermeldung:  %-.64s"
+        nla "De foreign data bron die u probeert te benaderen bestaat niet. Databron fount:  %-64s"
 ER_FOREIGN_DATA_STRING_INVALID_CANT_CREATE
         eng "Can't create federated table. The data source connection string '%-.64s' is not in the correct format"
         ger "Kann föderierte Tabelle nicht erzeugen. Der Datenquellen-Verbindungsstring '%-.64s' hat kein korrektes Format"
+        nla "Kan de federated tabel niet aanmaken. De databron connection string '%-.64s' is niet in het juiste formaat"
 ER_FOREIGN_DATA_STRING_INVALID
         eng "The data source connection string '%-.64s' is not in the correct format"
         ger "Der Datenquellen-Verbindungsstring '%-.64s' hat kein korrektes Format"
+        nla "De databron connection string '%-.64s' is niet in het juiste formaat"
 ER_CANT_CREATE_FEDERATED_TABLE  
         eng "Can't create federated table. Foreign data src error:  %-.64s"
         ger "Kann föderierte Tabelle nicht erzeugen. Fremddatenquellenfehlermeldung:  %-.64s"
+        nla "Kan de federated tabel niet aanmaken. Foreign databron fout:  %-.64s"
 ER_TRG_IN_WRONG_SCHEMA  
         eng "Trigger in wrong schema"
         ger "Trigger im falschen Schema"
+        nla "Trigger in verkeerd schema"
 ER_STACK_OVERRUN_NEED_MORE
         eng "Thread stack overrun:  %ld bytes used of a %ld byte stack, and %ld bytes needed.  Use 'mysqld --thread_stack=#' to specify a bigger stack."
         ger "Thread-Stack-Überlauf: %ld Bytes eines %ld-Byte-Stacks in Verwendung, und %ld Bytes benötigt. Verwenden Sie 'mysqld --thread_stack=#', um einen größeren Stack anzugeben"
+        nla "Thread stack overrun:  %ld bytes gebruikt van een %ld byte stack en %ld bytes nodig.  Gebruik 'mysqld --thread_stack=#' voor een grotere stack."
         jpn "スレッドスタック不足です(使用: %ld ; サイズ: %ld ; 要求: %ld)。より大きい値で 'mysqld --thread_stack=#' の指定をしてください。"
 ER_TOO_LONG_BODY 42000 S1009
         eng "Routine body for '%-.100s' is too long"
         ger "Routinen-Body für '%-.100s' ist zu lang"
+        nla "Routine body voor '%-.100s' is te lang"
 ER_WARN_CANT_DROP_DEFAULT_KEYCACHE
         eng "Cannot drop default keycache"
         ger "Der vorgabemäßige Schlüssel-Cache kann nicht gelöscht werden"
+        nla "De standaard keycache kan niet verwijderd worden"
 ER_TOO_BIG_DISPLAYWIDTH 42000 S1009
         eng "Display width out of range for column '%-.192s' (max = %lu)"
         ger "Anzeigebreite außerhalb des zulässigen Bereichs für Spalte '%-.192s' (Maximum: %lu)"
+        nla "Weergavebreedte voor kolom '%-.192s' is buiten bereik (max = %lu)"
 ER_XAER_DUPID XAE08
         eng "XAER_DUPID: The XID already exists"
         ger "XAER_DUPID: Die XID existiert bereits"
+        nla "XAER_DUPID: De XID bestaat reeds"
 ER_DATETIME_FUNCTION_OVERFLOW 22008
         eng "Datetime function: %-.32s field overflow"
         ger "Datetime-Funktion: %-.32s Feldüberlauf"
+        nla "Datetime-fucntie: %-.32s veld buiten bereik"
 ER_CANT_UPDATE_USED_TABLE_IN_SF_OR_TRG
         eng "Can't update table '%-.192s' in stored function/trigger because it is already used by statement which invoked this stored function/trigger."
         ger "Kann Tabelle '%-.192s' in gespeicherter Funktion oder Trigger nicht aktualisieren, weil sie bereits von der Anweisung verwendet wird, die diese gespeicherte Funktion oder den Trigger aufrief"
+        nla "Kan tabel '%-.192s' niet aanpassen in stored fuction/trigger omdat deze reeds gebruikt wordt door het statement wat deze stored function/trigger aanroept"
 ER_VIEW_PREVENT_UPDATE
         eng "The definition of table '%-.192s' prevents operation %.192s on table '%-.192s'."
         ger "Die Definition der Tabelle '%-.192s' verhindert die Operation %.192s auf Tabelle '%-.192s'"
+        nla "De definitie voor tabel '%-.192s' staat bewerking %.192s op tabel '%-.192s' niet toe."
 ER_PS_NO_RECURSION
         eng "The prepared statement contains a stored routine call that refers to that same statement. It's not allowed to execute a prepared statement in such a recursive manner"
+        nla "Het prepared statement bevat een stored routine aanroept naar het zelfde statement. Het is niet toegestaan om een prepared statement te gebruiken in zo'n recursieve manier"
         ger "Die vorbereitete Anweisung enthält einen Aufruf einer gespeicherten Routine, die auf eben dieselbe Anweisung verweist. Es ist nicht erlaubt, eine vorbereitete Anweisung in solch rekursiver Weise auszuführen"
 ER_SP_CANT_SET_AUTOCOMMIT
         eng "Not allowed to set autocommit from a stored function or trigger"
+        nla "het is niet toegestaan om autocommit te zetten vanuit een stored function of trigger"
         ger "Es ist nicht erlaubt, innerhalb einer gespeicherten Funktion oder eines Triggers AUTOCOMMIT zu setzen"
 ER_MALFORMED_DEFINER
         eng "Definer is not fully qualified"
         ger "Definierer des View ist nicht vollständig spezifiziert"
+        nla "Definer is niet volledig gespecificeerd"
 ER_VIEW_FRM_NO_USER
         eng "View '%-.192s'.'%-.192s' has no definer information (old table format). Current user is used as definer. Please recreate the view!"
+        nla "View '%-.192s'.'%-.192s' heeft geen definer informatie (oud tabel formaat). Huidige gebruiker wordt gebruikt als definer. Graag de view opnieuw aanmaken"
         ger "View '%-.192s'.'%-.192s' hat keine Definierer-Information (altes Tabellenformat). Der aktuelle Benutzer wird als Definierer verwendet. Bitte erstellen Sie den View neu"
 ER_VIEW_OTHER_USER
         eng "You need the SUPER privilege for creation view with '%-.192s'@'%-.192s' definer"
+        nla "U heeft het SUPER privilege nodig om een view aan te maken met '%-.192s'@'%-.192s' als definer"
         ger "Sie brauchen die SUPER-Berechtigung, um einen View mit dem Definierer '%-.192s'@'%-.192s' zu erzeugen"
 ER_NO_SUCH_USER
   eng "The user specified as a definer ('%-.64s'@'%-.64s') does not exist"
   ger "Der als Definierer angegebene Benutzer ('%-.64s'@'%-.64s') existiert nicht"
+  nla "De gebruiker welke gespecificeerd is als definer ('%-.64s'@'%-.64s') bestaat niet"
 ER_FORBID_SCHEMA_CHANGE
         eng "Changing schema from '%-.192s' to '%-.192s' is not allowed."
         ger "Wechsel des Schemas von '%-.192s' auf '%-.192s' ist nicht erlaubt"
+        nla "Wissellen van scheman van '%-.192s' naar '%-.192s' is niet toegestaan"
 ER_ROW_IS_REFERENCED_2 23000
         eng "Cannot delete or update a parent row: a foreign key constraint fails (%.192s)"
         ger "Kann Eltern-Zeile nicht löschen oder aktualisieren: eine Fremdschlüsselbedingung schlägt fehl (%.192s)"
+        nla "Kan ouder-rij niet verwijderen of aanpassen: een foreign key constraint wordt overtreden (%.192s)"
 ER_NO_REFERENCED_ROW_2 23000
         eng "Cannot add or update a child row: a foreign key constraint fails (%.192s)"
         ger "Kann Kind-Zeile nicht hinzufügen oder aktualisieren: eine Fremdschlüsselbedingung schlägt fehl (%.192s)"
+        nla "Kan kind-rij niet aanmaken of aanpassen: een foreign key constraint wordt overtreden (%.192s)"
 ER_SP_BAD_VAR_SHADOW 42000
         eng "Variable '%-.64s' must be quoted with `...`, or renamed"
         ger "Variable '%-.64s' muss mit `...` geschützt oder aber umbenannt werden"
+        nla "Variabele '%-.64s' moet gequote worden met `...` of moet hernoemd worden"
 ER_TRG_NO_DEFINER
         eng "No definer attribute for trigger '%-.192s'.'%-.192s'. The trigger will be activated under the authorization of the invoker, which may have insufficient privileges. Please recreate the trigger."
         ger "Kein Definierer-Attribut für Trigger '%-.192s'.'%-.192s'. Der Trigger wird mit der Autorisierung des Aufrufers aktiviert, der möglicherweise keine zureichenden Berechtigungen hat. Bitte legen Sie den Trigger neu an."
+        nla "Er is geen definer attribuut voor trigger '%-.192s'.'%-.192s'. De trigger wordt geactiveerd met de authorizatie van de aanvrager, deze kan te weinig rechten hebben. Graag de trigger opnieuw aanmaken."
 ER_OLD_FILE_FORMAT
         eng "'%-.192s' has an old format, you should re-create the '%s' object(s)"
         ger "'%-.192s' hat altes Format, Sie sollten die '%s'-Objekt(e) neu erzeugen"
+        nla "'%-.192s' heeft een oud formaat, u dient de '%s' object(en) opnieuw aan te maken"
 ER_SP_RECURSION_LIMIT
         eng "Recursive limit %d (as set by the max_sp_recursion_depth variable) was exceeded for routine %.192s"
         ger "Rekursionsgrenze %d (durch Variable max_sp_recursion_depth gegeben) wurde für Routine %.192s überschritten"
+        nla "De maximum recursiediepte %d (zoals gezet met max_sp_recursion_depth) is overschreden voor routine %.192s"
 ER_SP_PROC_TABLE_CORRUPT
         eng "Failed to load routine %-.192s. The table mysql.proc is missing, corrupt, or contains bad data (internal code %d)"
+        nla "Routine %-.192s kon niet worden geladen. De tabel mysql.proc mist, is corrupt of bevat ongeldige data (interne code %d)"
         ger "Routine %-.192s konnte nicht geladen werden. Die Tabelle mysql.proc fehlt, ist beschädigt, oder enthält fehlerhaften Daten (interner Code: %d)"
 ER_SP_WRONG_NAME 42000
         eng "Incorrect routine name '%-.192s'"
         ger "Ungültiger Routinenname '%-.192s'"
+        nla "Ongeldige routine naam '%-.192s'"
 ER_TABLE_NEEDS_UPGRADE
         eng "Table upgrade required. Please do \"REPAIR TABLE `%-.64s`\" or dump/reload to fix it!"
         ger "Tabellenaktualisierung erforderlich. Bitte zum Reparieren \"REPAIR TABLE `%-.64s`\" eingeben!"
+        nla "Tabel upgrade benodigd. Gebruik \"REPAIR TABLE `%-.64s`\" of dump/herlaad om dit te verhelpen!"
 ER_SP_NO_AGGREGATE 42000
         eng "AGGREGATE is not supported for stored functions"
         ger "AGGREGATE wird bei gespeicherten Funktionen nicht unterstützt"
+        nla "AGGREGATE is inet ondersteund voor stored functions"
 ER_MAX_PREPARED_STMT_COUNT_REACHED 42000
         eng "Can't create more than max_prepared_stmt_count statements (current value: %lu)"
         ger "Kann nicht mehr Anweisungen als max_prepared_stmt_count erzeugen (aktueller Wert: %lu)"
+        nla "Het is niet mogelijk om meer dan max_prepared_stmt_count statements te maken (huidige waarde: %lu)"
 ER_VIEW_RECURSIVE
         eng "`%-.192s`.`%-.192s` contains view recursion"
         ger "`%-.192s`.`%-.192s` enthält View-Rekursion"
+        nla "`%-.192s`.`%-.192s` bevat view-recursie"
 
 # the one below is not used anymore:
 ER_NON_GROUPING_FIELD_USED 42000
         eng "Non-grouping field '%-.192s' is used in %-.64s clause"
+        nla "Niet-groepveld '%-.192s' wordt gebruikt in %-64s clausule"
         ger "In der %-.192s-Klausel wird das die Nicht-Gruppierungsspalte '%-.64s' verwendet"
 ER_TABLE_CANT_HANDLE_SPKEYS
         eng "The used table type doesn't support SPATIAL indexes"
+        nla "Het gebruikte tabeltype ondersteund geen SPATIAL indexes"
         ger "Der verwendete Tabellentyp unterstützt keine SPATIAL-Indizes"
 ER_NO_TRIGGERS_ON_SYSTEM_SCHEMA
         eng "Triggers can not be created on system tables"
         ger "Trigger können nicht auf Systemtabellen erzeugt werden"
+        nla "Er kunnen geen triggers worden aangemaakt op systeemtabellen"
 ER_REMOVED_SPACES
         eng "Leading spaces are removed from name '%s'"
+        nla "De witruimte aan het begin van '%s' is verwijderd"
         ger "Führende Leerzeichen werden aus dem Namen '%s' entfernt"
 ER_AUTOINC_READ_FAILED
         eng "Failed to read auto-increment value from storage engine"
         ger "Lesen des Autoincrement-Werts von der Speicher-Engine fehlgeschlagen"
+        nla "De auto-increment waarde kon niet gelezen worden uit de storage engine"
 ER_USERNAME
         eng "user name"
         ger "Benutzername"
+        nla "gebruikersnaam"
 ER_HOSTNAME
         eng "host name"
         ger "Hostname"
+        nla "hostname"
 ER_WRONG_STRING_LENGTH
         eng "String '%-.70s' is too long for %s (should be no longer than %d)"
         ger "String '%-.70s' ist zu lang für %s (sollte nicht länger sein als %d)"
+        nla "String '%-.70s' is te lang voor %s (mag niet langer zijn dan %d)"
 ER_NON_INSERTABLE_TABLE  
         eng "The target table %-.100s of the %s is not insertable-into"
+        nla "In de doeltabel %-.100s van de %s kunnen geen insert's plaatsvinden" 
         ger "Die Zieltabelle %-.100s von %s ist nicht einfügbar"
         jpn "対象表 %-.100s は挿入可能ではないので、%s を行えません。"
 ER_ADMIN_WRONG_MRG_TABLE
   eng "Table '%-.64s' is differently defined or of non-MyISAM type or doesn't exist"
+  nla "Tablel '%-64s' is anders gedefinieerd of van niet-MyISAM type of bestaat niet"
   ger "Tabelle '%-.64s' ist unterschiedlich definiert, nicht vom Typ MyISAM oder existiert nicht"
 ER_TOO_HIGH_LEVEL_OF_NESTING_FOR_SELECT
   eng "Too high level of nesting for select"
   ger "Zu tief verschachtelte SELECT-Anweisungen"
+  nla "Te hoog nestingsnivo voor select"
 ER_NAME_BECOMES_EMPTY
   eng "Name '%-.64s' has become ''"
   ger "Name '%-.64s' wurde zu ''"
+  nla "Naam '%-.64s' is '' geworden"
 ER_AMBIGUOUS_FIELD_TERM
   eng "First character of the FIELDS TERMINATED string is ambiguous; please use non-optional and non-empty FIELDS ENCLOSED BY"
+  nla "Het eerste karakter van de FIELDS TERMINATED string is ambitieus; gebruik een niet-optioneel en niet-leeg FIELDS ENCLOSED BY"
   ger "Das erste Zeichen der Zeichenkette FIELDS TERMINATED ist mehrdeutig; bitte benutzen Sie nicht optionale und nicht leere FIELDS ENCLOSED BY"
 ER_FOREIGN_SERVER_EXISTS
   eng "The foreign server, %s, you are trying to create already exists."
   ger "Der entfernte Server %s, den Sie versuchen zu erzeugen, existiert schon."
+  nla "De foreign server , %s, die u probeerd aan te maken bestaat reeds."
 ER_FOREIGN_SERVER_DOESNT_EXIST
         eng "The foreign server name you are trying to reference does not exist. Data source error:  %-.64s"
+        nla "De foreign server naam waar u naar verwijst bestaat niet. Data source error:  %-.64s"
 	ger "Die externe Verbindung, auf die Sie zugreifen wollen, existiert nicht. Datenquellenfehlermeldung:  %-.64s"
 ER_ILLEGAL_HA_CREATE_OPTION
         eng "Table storage engine '%-.64s' does not support the create option '%.64s'"
+        nla "Tabel storage engine '%-.64s' heeft geen ondersteuning voor de create-optie '%.64s'"
         ger "Speicher-Engine '%-.64s' der Tabelle unterstützt die Option '%.64s' nicht"
 ER_PARTITION_REQUIRES_VALUES_ERROR
         eng "Syntax error: %-.64s PARTITIONING requires definition of VALUES %-.64s for each partition"
+        nla "Syntax fout: %-.64s PARTITIONING vereist definitie van VALUES %-.64s voor elke partitie"
         ger "Fehler in der SQL-Syntax: %-.64s-PARTITIONierung erfordert Definition von VALUES %-.64s für jede Partition"
         swe "Syntaxfel: %-.64s PARTITIONering kräver definition av VALUES %-.64s för varje partition"
 ER_PARTITION_WRONG_VALUES_ERROR
         eng "Only %-.64s PARTITIONING can use VALUES %-.64s in partition definition"
+        nla "Enkel %-.64s PARTITIONING kan VALUES %-.64 gebruiken in de partitiedefinitie"
         ger "Nur %-.64s-PARTITIONierung kann VALUES %-.64s in der Partitionsdefinition verwenden"
         swe "Endast %-.64s partitionering kan använda VALUES %-.64s i definition av partitionen" 
 ER_PARTITION_MAXVALUE_ERROR
         eng "MAXVALUE can only be used in last partition definition"
+        nla "MAXVALUE kan enkel gebruikt worden voor de definitie van de laatste partitie"
         ger "MAXVALUE kann nur für die Definition der letzten Partition verwendet werden"
         swe "MAXVALUE kan bara användas i definitionen av den sista partitionen"
 ER_PARTITION_SUBPARTITION_ERROR
         eng "Subpartitions can only be hash partitions and by key"
+        nla "Subparitiions kunnen enkel hash- of key-partities zijn"
         ger "Unterpartitionen dürfen nur HASH- oder KEY-Partitionen sein"
         swe "Subpartitioner kan bara vara hash och key partitioner"
 ER_PARTITION_SUBPART_MIX_ERROR
         eng "Must define subpartitions on all partitions if on one partition"
+        nla "Als er gebruik wordt gemaakt van subpartities moet dit op elke partitie gedaan worden"
         ger "Wenn Sie Unterpartitionen auf einer Partition definieren, müssen Sie das für alle Partitionen tun"
         swe "Subpartitioner måste definieras på alla partitioner om på en"
 ER_PARTITION_WRONG_NO_PART_ERROR
         eng "Wrong number of partitions defined, mismatch with previous setting"
+        nla "Verkeerd aantal partities gedefinieerd, komt niet overeen met vorige instelling"
         ger "Falsche Anzahl von Partitionen definiert, stimmt nicht mit vorherigen Einstellungen überein"
         swe "Antal partitioner definierade och antal partitioner är inte lika"
 ER_PARTITION_WRONG_NO_SUBPART_ERROR
         eng "Wrong number of subpartitions defined, mismatch with previous setting"
+        nla "Verkeerd aantal subpartities gedefinieerd, komt niet overeen met vorige instelling"
         ger "Falsche Anzahl von Unterpartitionen definiert, stimmt nicht mit vorherigen Einstellungen überein"
         swe "Antal subpartitioner definierade och antal subpartitioner är inte lika"
 ER_WRONG_EXPR_IN_PARTITION_FUNC_ERROR
         eng "Constant, random or timezone-dependent expressions in (sub)partitioning function are not allowed"
+        nla "Constant, random of tijdzone-afhankelijke expressies zijn niet toegestaan in (sub)partitie functie"
         ger "Konstante oder Random-Ausdrücke in (Unter-)Partitionsfunktionen sind nicht erlaubt"
         swe "Konstanta uttryck eller slumpmässiga uttryck är inte tillåtna (sub)partitioneringsfunktioner"
 ER_NO_CONST_EXPR_IN_RANGE_OR_LIST_ERROR
         eng "Expression in RANGE/LIST VALUES must be constant"
+        nla "Expressie in RANGE/LIST VALUES moet constant zijn"
         ger "Ausdrücke in RANGE/LIST VALUES müssen konstant sein"
         swe "Uttryck i RANGE/LIST VALUES måste vara ett konstant uttryck"
 ER_FIELD_NOT_FOUND_PART_ERROR
         eng "Field in list of fields for partition function not found in table"
+        nla "Veld in veldlijst for paritie functie is niet gevonden in de tabel"
         ger "Felder in der Feldliste der Partitionierungsfunktion wurden in der Tabelle nicht gefunden"
         swe "Fält i listan av fält för partitionering med key inte funnen i tabellen"
 ER_LIST_OF_FIELDS_ONLY_IN_HASH_ERROR
         eng "List of fields is only allowed in KEY partitions"
+        nla "Een veldlijst is enkel toegestaan in KEY-partitie"
         ger "Eine Feldliste ist nur in KEY-Partitionen erlaubt"
         swe "En lista av fält är endast tillåtet för KEY partitioner"
 ER_INCONSISTENT_PARTITION_INFO_ERROR
         eng "The partition info in the frm file is not consistent with what can be written into the frm file"
+        nla "De partitieinformatie in het frm-bestand komt niet overeen met wat er in de frm-file geschreven kan worden"
         ger "Die Partitionierungsinformationen in der frm-Datei stimmen nicht mit dem überein, was in die frm-Datei geschrieben werden kann"
         swe "Partitioneringsinformationen i frm-filen är inte konsistent med vad som kan skrivas i frm-filen"
 ER_PARTITION_FUNC_NOT_ALLOWED_ERROR
         eng "The %-.192s function returns the wrong type"
+        nla "De %-.192s funtie geeft een verkeerd type terug"
         ger "Die %-.192s-Funktion gibt einen falschen Typ zurück"
         swe "%-.192s-funktionen returnerar felaktig typ"
 ER_PARTITIONS_MUST_BE_DEFINED_ERROR
         eng "For %-.64s partitions each partition must be defined"
+        nla "Voor %-.64s partities moet elke paritie worden gedefinieerd"
         ger "Für %-.64s-Partitionen muss jede Partition definiert sein"
         swe "För %-.64s partitionering så måste varje partition definieras"
 ER_RANGE_NOT_INCREASING_ERROR
         eng "VALUES LESS THAN value must be strictly increasing for each partition"
+        nla "De waarde in VALUES LESS THAN moet strict oplopen voor elke partitie"
         ger "Werte in VALUES LESS THAN müssen für jede Partition strikt aufsteigend sein"
         swe "Värden i VALUES LESS THAN måste vara strikt växande för varje partition"
 ER_INCONSISTENT_TYPE_OF_FUNCTIONS_ERROR
         eng "VALUES value must be of same type as partition function"
+        nla "VALUES waarde moet van het zelfde type zijn als de partitie functie"
         ger "VALUES-Werte müssen vom selben Typ wie die Partitionierungsfunktion sein"
         swe "Värden i VALUES måste vara av samma typ som partitioneringsfunktionen"
 ER_MULTIPLE_DEF_CONST_IN_LIST_PART_ERROR
@@ -6774,6 +7017,7 @@ ER_INNODB_ONLINE_LOG_TOO_BIG
   eng "Creating index '%-.192s' required more than 'innodb_online_alter_log_max_size' bytes of modification log. Please try again."
 
 ER_UNKNOWN_ALTER_ALGORITHM
+  nla "Onbekend ALGORITHM '%s'"
   eng "Unknown ALGORITHM '%s'"
 
 ER_UNKNOWN_ALTER_LOCK
@@ -6805,9 +7049,11 @@ ER_TABLE_IN_SYSTEM_TABLESPACE
   eng "Table '%-.192s' in system tablespace"
 
 ER_IO_READ_ERROR
+  nla "IO leesfout: (%lu, %s) %s"
   eng "IO Read error: (%lu, %s) %s"
 
 ER_IO_WRITE_ERROR
+  nla "IO schrijffout: (%lu, %s) %s"
   eng "IO Write error: (%lu, %s) %s"
 
 ER_TABLESPACE_MISSING
@@ -6821,22 +7067,28 @@ ER_TABLESPACE_DISCARDED
 
 ER_INTERNAL_ERROR
   eng "Internal error: %s"
+  nla "Interne fout: %s"
 
 ER_INNODB_IMPORT_ERROR
   eng "ALTER TABLE %-.192s IMPORT TABLESPACE failed with error %lu : '%s'"
+  nla "ALTER TABLE '%-.192s' IMPORT TABLESPACE mislukt met foutmelding %lu : '%s'"
 
 ER_INNODB_INDEX_CORRUPT
   eng "Index corrupt: %s"
+  nla "Index corrupt: %s"
 
 ER_INVALID_YEAR_COLUMN_LENGTH
   eng "Supports only YEAR or YEAR(4) column."
   rus "Поддерживаются только типы колонок YEAR или YEAR(4)."
+  nla "YEAR(%lu) kolom type is deprecated. Er zal in plaats hiervan een een YEAR(4) kolom worden gemaakt."
 
 ER_NOT_VALID_PASSWORD
   eng "Your password does not satisfy the current policy requirements"
+  nla "Uw wachtwoord voldoet niet aan de eisen van de huidige policy"
 
 ER_MUST_CHANGE_PASSWORD
   eng "You must reset your password using ALTER USER statement before executing this statement."
+  nla "U dient uw wachtwoord ter veranderen met ALTER USER voordat u dit statement uitvoert"
   bgn "Трябва първо да си смените паролата със SET PASSWORD за да можете да изпълните тази команда"
 
 ER_FK_NO_INDEX_CHILD
@@ -6847,116 +7099,152 @@ ER_FK_NO_INDEX_PARENT
 
 ER_FK_FAIL_ADD_SYSTEM
         eng "Failed to add the foreign key constraint '%s' to system tables"
+        nla "Mislukt om de vreemdesleutelbeperking '%s' aan te brengen op de systeem tabellen"
 
 ER_FK_CANNOT_OPEN_PARENT
         eng "Failed to open the referenced table '%s'"
+        nla "Mislukt om de gerefereerde tabel '%s' te openen"
 
 ER_FK_INCORRECT_OPTION
         eng "Failed to add the foreign key constraint on table '%s'. Incorrect options in FOREIGN KEY constraint '%s'"
+        nla "Mislukt om de vreemdesleutelbeperking aan te brengen op tabel '%s'. Verkeerde opties in FOREIGN KEY beperking '%s'"
 
 ER_FK_DUP_NAME
 	eng "Duplicate foreign key constraint name '%s'"
+        nla "Dubbele vreemdesleutelbeperkingnaam '%s'"
 
 ER_PASSWORD_FORMAT
   eng "The password hash doesn't have the expected format. Check if the correct password algorithm is being used with the PASSWORD() function."
+  nla "De wachtwoordhash heeft niet het verwachte formaat. Controleer of het correcte wachtwoordalgorithme wordt gebruikt voor de PASSWORD() functie."
 
 ER_FK_COLUMN_CANNOT_DROP
         eng "Cannot drop column '%-.192s': needed in a foreign key constraint '%-.192s'"
         ger "Kann Spalte '%-.192s' nicht löschen: wird für eine Fremdschlüsselbeschränkung '%-.192s' benötigt"
+        nla "Kan kolom '%-.192s' niet verwijdren: benodigd in een vreemdesleutelbeperking '%-.192s'"
 
 ER_FK_COLUMN_CANNOT_DROP_CHILD
         eng "Cannot drop column '%-.192s': needed in a foreign key constraint '%-.192s' of table '%-.192s'"
         ger "Kann Spalte '%-.192s' nicht löschen: wird für eine Fremdschlüsselbeschränkung '%-.192s' der Tabelle '%-.192s' benötigt"
+        nla "Kan kolom '%-.192s' niet verwijdren: benodigd in een vreemdesleutelbeperking '%-.192s' van tabel '%-.192s'"
 
 ER_FK_COLUMN_NOT_NULL
         eng "Column '%-.192s' cannot be NOT NULL: needed in a foreign key constraint '%-.192s' SET NULL"
         ger "Spalte '%-.192s' kann nicht NOT NULL sein: wird für eine Fremdschlüsselbeschränkung '%-.192s' SET NULL benötigt"
+        nla "Kolom '%-.192s' mag net NOT NULL zijn: benodigd in een vreemdesleutelbeperking '%-.192s' SET NULL vereist"
 
 ER_DUP_INDEX
   eng "Duplicate index '%-.64s' defined on the table '%-.64s.%-.64s'. This is deprecated and will be disallowed in a future release."
+  nla "Dubbele index '%-.64s' gedefinieerd op de tabel '%-.64s.%-.64s'. Dit is deprecated en zal in een toekomstige release verdwijnen."
 
 ER_FK_COLUMN_CANNOT_CHANGE
   eng "Cannot change column '%-.192s': used in a foreign key constraint '%-.192s'"
+  nla "Onmogelijk om kolom '%-.192s' te veranderen: gebruikt in een vreemdesleutelbeperking '%-.192s'"
 
 ER_FK_COLUMN_CANNOT_CHANGE_CHILD
   eng "Cannot change column '%-.192s': used in a foreign key constraint '%-.192s' of table '%-.192s'"
+  nla "Onmogelijk om kolom '%-.192s' te veranderen: gebruikt in een vreemdesleutelbeperking '%-.192s' van tabel '%-.192s'"
 
 # No longer used as IGNORE support for ALTER TABLE was removed.
 ER_UNUSED5
   eng "Cannot delete rows from table which is parent in a foreign key constraint '%-.192s' of table '%-.192s'"
+  nla "Onmogelijk om rijen te verwijderen uit een tabel welke ouder is in een vreemdesleutelbeperking '%-.192s' van tabel '%-.192s"
 
 ER_MALFORMED_PACKET
   eng "Malformed communication packet."
+  nla "Misvormd communicatie pakket."
 
 ER_READ_ONLY_MODE
         eng "Running in read-only mode"
+        nla "Draaiende in alleen-lezen modus"
 
 ER_GTID_NEXT_TYPE_UNDEFINED_GROUP
   eng "When @@SESSION.GTID_NEXT is set to a GTID, you must explicitly set it to a different value after a COMMIT or ROLLBACK. Please check GTID_NEXT variable manual page for detailed explanation. Current @@SESSION.GTID_NEXT is '%s'."
+  nla "Wanneer @@SESSION.GTID_NEXT is gezet op een GTID, moet u deze expliciet op een andere waarde zeten na een COMMIT of een ROLLBACK. Zie de GTID_NEXT variabele pagina in de handleiding voor een gedetaileerde uitleg. Huidige @@SESSION.GTID_NEXT is '%s'."
 
 ER_VARIABLE_NOT_SETTABLE_IN_SP
   eng "The system variable %.200s cannot be set in stored procedures."
+  nla "De systeem variabele %.200s kan niet worden gezet in een stored procedures."
 
 ER_CANT_SET_GTID_PURGED_WHEN_GTID_MODE_IS_OFF
   eng "@@GLOBAL.GTID_PURGED can only be set when @@GLOBAL.GTID_MODE = ON."
+  nla "@@GLOBAL.GTID_PURGED kan enkel worden gezet wanner @@GLOBAL.GTID_MODE = ON."
 
 ER_CANT_SET_GTID_PURGED_WHEN_GTID_EXECUTED_IS_NOT_EMPTY
   eng "@@GLOBAL.GTID_PURGED can only be set when @@GLOBAL.GTID_EXECUTED is empty."
+  nla "@@GLOBAL.GTID_PURGED kan enkel worden gezet wanneerd @@GLOBAL.GTID_EXECUTED leeg is."
 
 ER_CANT_SET_GTID_PURGED_WHEN_OWNED_GTIDS_IS_NOT_EMPTY
   eng "@@GLOBAL.GTID_PURGED can only be set when there are no ongoing transactions (not even in other clients)."
+  nla "@@GLOBAL.GTID_PURGED kan enkel worden gezet als er geen transacties bezig zijn (ook niet door andere clients)."
 
 ER_GTID_PURGED_WAS_CHANGED
   eng "@@GLOBAL.GTID_PURGED was changed from '%s' to '%s'."
+  nla "@@GLOBAL.GTID_PURGED is veranderd van '%s' naar '%s'."
 
 ER_GTID_EXECUTED_WAS_CHANGED
   eng "@@GLOBAL.GTID_EXECUTED was changed from '%s' to '%s'."
+  nla "@@GLOBAL.GTID_EXECUTED is veranderd van '%s' naar '%s'."
 
 ER_BINLOG_STMT_MODE_AND_NO_REPL_TABLES
   eng "Cannot execute statement: impossible to write to binary log since BINLOG_FORMAT = STATEMENT, and both replicated and non replicated tables are written to."
+  nla "Onmogelijk om statement uit te voeren: onmogelijk om binarire log te schrijven omdate BINLOG_FORMAT = STATEMENT, en er wrodt geschrijven naar zowel gerepliceerde en niet-gerepliceerde tabellen."
 
 ER_ALTER_OPERATION_NOT_SUPPORTED 0A000
   eng "%s is not supported for this operation. Try %s."
+  nla "%s is niet onderstuend voor deze bewerking. Probeerd %s."
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON 0A000
   eng "%s is not supported. Reason: %s. Try %s."
+  nla "%s is niet ondersteund. Reden: %s. Probeer %s."
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_COPY
   eng "COPY algorithm requires a lock"
+  nla "COPY algorithme vereist een lock"
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_PARTITION
   eng "Partition specific operations do not yet support LOCK/ALGORITHM"
+  nla "Partitie specifieke bewerkingen ondersteunen nog geen LOCK/ALGORITHM"
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FK_RENAME
   eng "Columns participating in a foreign key are renamed"
+  nla "Kolommen die meedoen in een vreemde sleutel zijn hernoemd"
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_COLUMN_TYPE
   eng "Cannot change column type INPLACE"
+  nla "Kan kolom type niet INPLACE veranderen"
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FK_CHECK
   eng "Adding foreign keys needs foreign_key_checks=OFF"
+  nla "Toevoegen van een vreemde sleutel vereist foreign_key_checks=OFF"
 
 # No longer used as IGNORE support for ALTER TABLE was removed.
 ER_UNUSED6
   eng "Creating unique indexes with IGNORE requires COPY algorithm to remove duplicate rows"
+  nla "Het aanmaken van een unieke indexes met IGNORE vereist COPY algorithme om dubbele rijen te verwijderen"
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_NOPK
   eng "Dropping a primary key is not allowed without also adding a new primary key"
+  nla "Verwijderen van een primaire sleutel is niet toegestaand zonder dat er ook een nieuwe primaire sleuten wordt toegevoegd"
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_AUTOINC
   eng "Adding an auto-increment column requires a lock"
+  nla "Toevoegen van een auto-increment kolom vereist een lock"
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_HIDDEN_FTS
   eng "Cannot replace hidden FTS_DOC_ID with a user-visible one"
+  nla "Onmogelijk om verborgen FTS_DOC_ID te vervangen met een voor de gebruiker zichtbare versie"
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_CHANGE_FTS
   eng "Cannot drop or rename FTS_DOC_ID"
+  nla "Onmogelijk om FTS_DOC_ID te hernoemen of verwijderen"
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FTS
   eng "Fulltext index creation requires a lock"
+  nla "Aanmaken van fulltext index vereist een lock"
 
 ER_SQL_SLAVE_SKIP_COUNTER_NOT_SETTABLE_IN_GTID_MODE
   eng "sql_slave_skip_counter can not be set when the server is running with @@GLOBAL.GTID_MODE = ON. Instead, for each transaction that you want to skip, generate an empty transaction with the same GTID as the transaction"
+  nla "sql_slave_skip_counter kan niet worden gezet wanner de server draait met @@GLOBAL.GTID_MODE = ON. In plaats hiervan kunt u een lege transactie genereren met dezelfde GTID als de transactie die u wilt overslaan"
 
 ER_DUP_UNKNOWN_IN_INDEX 23000
   cze "Zdvojený klíč (číslo klíče '%-.192s')"
@@ -6984,47 +7272,61 @@ ER_DUP_UNKNOWN_IN_INDEX 23000
   ukr "Дублюючий запис для ключа '%-.192s'"
 
 ER_IDENT_CAUSES_TOO_LONG_PATH
+  nla "Lange database naam en identifier voor object resulteerde in een pad lengte groter dan %d karakters. Pad: '%s'."
   eng "Long database name and identifier for object resulted in path length exceeding %d characters. Path: '%s'."
 
 ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_NOT_NULL
+  nla "onmogelijk om stil NULL waardes om te zetten, zoals vereist in deze SQL_MODE"
   eng "cannot silently convert NULL values, as required in this SQL_MODE"
 
 ER_MUST_CHANGE_PASSWORD_LOGIN
+  nla "Uw wachtwoord is verlopen. Om aan te loggen moet deze veranderd worden met een client die verlopen wachtwoorden ondersteund."
   eng "Your password has expired. To log in you must change it using a client that supports expired passwords."
   bgn "Паролата ви е изтекла. За да влезете трябва да я смените използвайки клиент който поддрържа такива пароли."
 
 ER_ROW_IN_WRONG_PARTITION
+  nla "Er is een rij gevonde in de verkeerde partitie %s"
   eng "Found a row in wrong partition %s"
   swe "Hittade en rad i fel partition %s"
 
 ER_MTS_EVENT_BIGGER_PENDING_JOBS_SIZE_MAX
+  nla "Kan gebeurtenis %s niet plannen, relay-log naam %s, positie %s naar werk thread omdat zijn grootte %lu groter is dan %lu van slave_pending_jobs_size_max."
   eng "Cannot schedule event %s, relay-log name %s, position %s to Worker thread because its size %lu exceeds %lu of slave_pending_jobs_size_max."
 
 ER_INNODB_NO_FT_USES_PARSER
+  nla "Onmogelijk om CREATE FULLTEXT INDEX WITH PARSER uit te voeren op InnoDB table"
   eng "Cannot CREATE FULLTEXT INDEX WITH PARSER on InnoDB table"
 
 ER_BINLOG_LOGICAL_CORRUPTION
+  nla "Het binaire log bestand '%s' is logisch corrupt: %s"
   eng "The binary log file '%s' is logically corrupted: %s"
 
 ER_WARN_PURGE_LOG_IN_USE
+  nla "bestand %s was niet verwijderd omdate het werd gelezen door %d thread(s), enkel %d van de %d bestanden verwijderd."
   eng "file %s was not purged because it was being read by %d thread(s), purged only %d out of %d files."
 
 ER_WARN_PURGE_LOG_IS_ACTIVE
+  nla "bestand %s was niet verwijderd omdat het het actieve log bestand betreft."
   eng "file %s was not purged because it is the active log file."
 
 ER_AUTO_INCREMENT_CONFLICT
+  nla "Auto-increment waarde in UPDATE conflicteerd met inter gegenereede waardes"
   eng "Auto-increment value in UPDATE conflicts with internally generated values"
 
 WARN_ON_BLOCKHOLE_IN_RBR
+  nla "Rij events worden niet gelogd voor %s statements welke BLACKHOLE tabellen in rij formaat wijzigen. Table(s): '%-.192s'"
   eng "Row events are not logged for %s statements that modify BLACKHOLE tables in row format. Table(s): '%-.192s'"
 
 ER_SLAVE_MI_INIT_REPOSITORY
+  nla "Fout bij het initializeren van de master info struktuur door de slave"
   eng "Slave failed to initialize master info structure from the repository"
 
 ER_SLAVE_RLI_INIT_REPOSITORY
+  nla "Fout bij het initializeren van de relay log info struktuur door de slave"
   eng "Slave failed to initialize relay log info structure from the repository"
 
 ER_ACCESS_DENIED_CHANGE_USER_ERROR 28000 
+        nla "Toegang geweigerd bij het veranderen naar gebruiker '%-.48s'@'%-.64s' (gebruikmakend van wachtwoord: %s)."
         eng "Access denied trying to change to user '%-.48s'@'%-.64s' (using password: %s). Disconnecting."
         bgn "Отказан достъп при опит за смяна към потребител %-.48s'@'%-.64s' (използвана парола: %s). Затваряне на връзката."
 
@@ -7033,34 +7335,44 @@ ER_INNODB_READ_ONLY
 
 ER_STOP_SLAVE_SQL_THREAD_TIMEOUT
   eng "STOP SLAVE command execution is incomplete: Slave SQL thread got the stop signal, thread is busy, SQL thread will stop once the current task is complete."
+  nla "STOP SLAVE commando uitvoering is niet compleet: de slave SQL thread heeft het stop signaal ontvangen, thread is bezig, SQL thread zal stoppen als de uitvoeren van de huidige taak is afgerond."
 
 ER_STOP_SLAVE_IO_THREAD_TIMEOUT
   eng "STOP SLAVE command execution is incomplete: Slave IO thread got the stop signal, thread is busy, IO thread will stop once the current task is complete."
+  nla "STOP SLAVE commando uitvoering is niet compleet: de slave IO thread heeft het stop signaal ontvangen, thread is bezig, IO thread zal stoppen als  de uitvoeren van de huidige taak is afgerond."
 
 ER_TABLE_CORRUPT
   eng "Operation cannot be performed. The table '%-.64s.%-.64s' is missing, corrupt or contains bad data."
+  nla "Bewerking kan niet uitgevoerd worden. De tabel '%-.64s.%-.64s' mist, is corrupt of bevat foute data."
 
 ER_TEMP_FILE_WRITE_FAILURE
   eng "Temporary file write failure."
+  nla "Fout bij schrijven naar tijdelijk bestand."
 
 ER_INNODB_FT_AUX_NOT_HEX_ID
   eng "Upgrade index name failed, please use create index(alter table) algorithm copy to rebuild index."
+  nla "Upgrade index naam mislukt, maak gebruik van create index(alter table) algorithm copy om de index opnieuw op te bouwen."
 
 ER_OLD_TEMPORALS_UPGRADED
   eng "TIME/TIMESTAMP/DATETIME columns of old format have been upgraded to the new format."
+  nla "TIME/TIMESTAMP/DATETIME kolommen in oud formaat zijn geupgrade naar het nieuwe formaat."
 
 ER_INNODB_FORCED_RECOVERY
   eng "Operation not allowed when innodb_forced_recovery > 0."
+  nla "Bewerking niet toegestaan zolang innodb_forced_recovery > 0."
 
 ER_AES_INVALID_IV
   eng "The initialization vector supplied to %s is too short. Must be at least %d bytes long"
   bg "Инициализационния вектор подаден на %s е прекалено къс. Трябва да е поне %d байта"
+  nla "De initializatievector opgegeven aan %s is te kort. Moet tenmiste %d bytes lang zijn"
 
 ER_PLUGIN_CANNOT_BE_UNINSTALLED
   eng "Plugin '%s' cannot be uninstalled now. %s"
+  nla "Plugin '%s' kan op dit moment niet gedeïnstalleerd worden. %s"
 
 ER_GTID_UNSAFE_BINLOG_SPLITTABLE_STATEMENT_AND_GTID_GROUP
   eng "Cannot execute statement because it needs to be written to the binary log as multiple statements, and this is not allowed when @@SESSION.GTID_NEXT == 'UUID:NUMBER'."
+  nla "Kan het statement niet uitvoeren omdat het naar de binare log geschreven moet worden als meerdere statements, en dit is niet toegestaan wanneer @@SESSION.GTID_NEXT == 'UUID:NUMBER'."
 
 ER_SLAVE_HAS_MORE_GTIDS_THAN_MASTER
   eng "Slave has more GTIDs than the master has, using the master's SERVER_UUID. This may indicate that the end of the binary log was truncated or that the last binary log file was lost, e.g., after a power or disk failure when sync_binlog != 1. The master may or may not have rolled back transactions that were already replicated to the slave. Suggest to replicate any transactions that master has rolled back from slave to master, and/or commit empty transactions on master to account for transactions that have been committed on master but are not included in GTID_EXECUTED."
@@ -7436,24 +7748,30 @@ ER_ACCOUNT_HAS_BEEN_LOCKED
 
 ER_WRONG_TABLESPACE_NAME 42000
   eng "Incorrect tablespace name `%-.192s`"
+  nla "Ongeldige tablespacenaam `%-.192s`"
 
 ER_TABLESPACE_IS_NOT_EMPTY
   eng "Tablespace `%-.192s` is not empty."
+  nla "Tablespace `%-.192s` is niet leeg."
 
 ER_WRONG_FILE_NAME
   eng "Incorrect File Name '%s'."
+  nla "Ongeldige bestandsnaam '%s'."
 
 ER_BOOST_GEOMETRY_INCONSISTENT_TURNS_EXCEPTION
   eng "Inconsistent intersection points."
 
 ER_WARN_OPTIMIZER_HINT_SYNTAX_ERROR
   eng "Optimizer hint syntax error"
+  nla "Optimizer hint syntax fout"
 
 ER_WARN_BAD_MAX_EXECUTION_TIME
   eng "Unsupported MAX_EXECUTION_TIME"
+  nla "Niet ondersteunde MAX_EXECUTION_TIME"
 
 ER_WARN_UNSUPPORTED_MAX_EXECUTION_TIME
   eng "MAX_EXECUTION_TIME hint is supported by top-level standalone SELECT statements only"
+  nla "MAX_EXECUTION_TIME hint is enkel ondersteund door top-nivo alleenstaande SELECT statements"
 
 ER_WARN_CONFLICTING_HINT
   eng "Hint %s is ignored as conflicting/duplicated"
@@ -7566,18 +7884,23 @@ ER_NO_SECURE_TRANSPORTS_CONFIGURED
 
 ER_DISABLED_STORAGE_ENGINE
   eng "Storage engine %s is disabled (Table creation is disallowed)."
+  nla "Storage engine %s staat uit (aanmaken van tabel is niet toegestaan)."
 
 ER_USER_DOES_NOT_EXIST
   eng "User %s does not exist."
+  nla "Gebruiker %s bestaat niet."
 
 ER_USER_ALREADY_EXISTS
+  nla "Gebruiker %s bestaat reeds."
   eng "User %s already exists."
 
 ER_AUDIT_API_ABORT
   eng "Aborted by Audit API ('%-.48s';%d)."
+  nla "Afgebroken door Audit API ('%-.48s';%d)."
 
 ER_INVALID_JSON_PATH_ARRAY_CELL 42000
   eng "A path expression is not a path to a cell in an array."
+  nla "Een pad-expressie is niet een pad naar een cel in een array."
 
 #
 #  End of 5.7 error messages.
