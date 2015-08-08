@@ -44,4 +44,6 @@ int main() {
 IF(HAVE_PEERCRED)
   MYSQL_ADD_PLUGIN(auth_socket auth_socket.c
     MODULE_ONLY)
+  MYSQL_ADD_PLUGIN(authsock_srv authsock_srv.c
+    MODULE_ONLY)
 ENDIF()
