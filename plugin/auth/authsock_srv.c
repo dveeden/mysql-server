@@ -36,31 +36,45 @@ static int socket_auth(MYSQL_PLUGIN_VIO *vio, MYSQL_SERVER_AUTH_INFO *info)
   int s, t, len;
   char str[100];
   struct sockaddr_un remote;
+  struct ucred cred;
+  socklen_t cred_len= sizeof(cred);
+  struct passwd pwd_buf, *pwd;
+  char buf[1024];
 
   if ((s = socket(AF_UNIX, SOCK_STREAM, 0)) == -1) {
-      return CR_ERROR;
+      return CR_AUTH_PLUGIN_ERROR;
   }
 
   remote.sun_family = AF_UNIX;
   strcpy(remote.sun_path, sockpath);
   len = strlen(remote.sun_path) + sizeof(remote.sun_family);
-  if (connect(s, (struct sockaddr *)&remote, len) == -1) {
-      return CR_ERROR;
+  if (connect(s, (struct sockaddr *)&remote, len) == -1)
+      return CR_AUTH_PLUGIN_ERROR;
+
+  if (getsockopt(s, SOL_SOCKET, SO_PEERCRED, &cred, &cred_len))
+      return CR_AUTH_PLUGIN_ERROR;
+
+  if (getpwuid_r(cred.uid, &pwd_buf, buf, sizeof(buf), &pwd))
+      return CR_AUTH_PLUGIN_ERROR;
+
+  if (pwd->pw_name != "mysql") {
+      fprintf(stderr, "Error socket listener is not using mysql user, but %s\n", pwd->pw_name);
+      return CR_AUTH_PLUGIN_ERROR;
   }
 
   /* no user name yet ? read the client handshake packet with the user name */
   if (info->user_name == 0)
   {
     if (vio->read_packet(vio, &pkt) < 0)
-      return CR_ERROR;
+      return CR_AUTH_PLUGIN_ERROR;
   }
 
   if (vio->read_packet(vio, &pkt) < 0)
-    return CR_ERROR;
+    return CR_AUTH_PLUGIN_ERROR;
 
   sprintf(str, "{\"username\": \"%s\", \"password\": \"%s\"}\n", info->user_name, pkt);
   if (send(s, str, strlen(str), 0) == -1)
-      return CR_ERROR;
+      return CR_AUTH_PLUGIN_ERROR;
 
   t = recv(s, str, 100, 0);
   str[t] = 0;
@@ -70,7 +84,7 @@ static int socket_auth(MYSQL_PLUGIN_VIO *vio, MYSQL_SERVER_AUTH_INFO *info)
   }
 
   close(s);
-  return CR_ERROR;
+  return CR_AUTH_USER_CREDENTIALS;
 }
 
 int generate_auth_string_hash(char *outbuf __attribute__((unused)),
