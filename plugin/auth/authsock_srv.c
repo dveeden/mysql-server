@@ -48,33 +48,49 @@ static int socket_auth(MYSQL_PLUGIN_VIO *vio, MYSQL_SERVER_AUTH_INFO *info)
   remote.sun_family = AF_UNIX;
   strcpy(remote.sun_path, sockpath);
   len = strlen(remote.sun_path) + sizeof(remote.sun_family);
-  if (connect(s, (struct sockaddr *)&remote, len) == -1)
+  if (connect(s, (struct sockaddr *)&remote, len) == -1) {
+      fprintf(stderr, "Error: socket connection failed\n");
       return CR_AUTH_PLUGIN_ERROR;
+  }
 
-  if (getsockopt(s, SOL_SOCKET, SO_PEERCRED, &cred, &cred_len))
+  if (getsockopt(s, SOL_SOCKET, SO_PEERCRED, &cred, &cred_len)) {
+      fprintf(stderr, "Error: can't get socket credentials: getsockopt failed\n");
+      close(s);
       return CR_AUTH_PLUGIN_ERROR;
+  }
 
-  if (getpwuid_r(cred.uid, &pwd_buf, buf, sizeof(buf), &pwd))
+  getpwuid_r(cred.uid, &pwd_buf, buf, sizeof(buf), &pwd);
+  if (pwd == NULL) {
+      fprintf(stderr, "Error: can't get socket credentials: getpwuid_r returned NULL\n");
+      close(s);
       return CR_AUTH_PLUGIN_ERROR;
+  }
 
-  if (pwd->pw_name != "mysql") {
-      fprintf(stderr, "Error socket listener is not using mysql user, but %s\n", pwd->pw_name);
+  if (strcmp(pwd->pw_name, "mysql") != 0) {
+      fprintf(stderr, "Error: socket listener is not using 'mysql' user, but '%s'\n", pwd->pw_name);
+      close(s);
       return CR_AUTH_PLUGIN_ERROR;
   }
 
   /* no user name yet ? read the client handshake packet with the user name */
   if (info->user_name == 0)
   {
-    if (vio->read_packet(vio, &pkt) < 0)
+    if (vio->read_packet(vio, &pkt) < 0) {
+      close(s);
       return CR_AUTH_PLUGIN_ERROR;
+    }
   }
 
-  if (vio->read_packet(vio, &pkt) < 0)
+  if (vio->read_packet(vio, &pkt) < 0) {
+    close(s);
     return CR_AUTH_PLUGIN_ERROR;
+  }
 
   sprintf(str, "{\"username\": \"%s\", \"password\": \"%s\"}\n", info->user_name, pkt);
-  if (send(s, str, strlen(str), 0) == -1)
+  if (send(s, str, strlen(str), 0) == -1) {
+      close(s);
       return CR_AUTH_PLUGIN_ERROR;
+  }
 
   t = recv(s, str, 100, 0);
   str[t] = 0;
