@@ -42,6 +42,7 @@
 #include <signal.h>
 #include <violite.h>
 #include "prealloced_array.h"
+#include <arpa/inet.h>
 
 #ifdef HAVE_SYS_IOCTL_H
 #include <sys/ioctl.h>
@@ -4178,6 +4179,8 @@ print_table_data_vertically(MYSQL_RES *result)
   MYSQL_ROW	cur;
   uint		max_length=0;
   MYSQL_FIELD	*field;
+  char          ip_dst[INET6_ADDRSTRLEN];
+  char          ip_tmp[16];
 
   while ((field = mysql_fetch_field(result)))
   {
@@ -4203,7 +4206,26 @@ print_table_data_vertically(MYSQL_RES *result)
       field= mysql_fetch_field(result);
       if (column_names)
         tee_fprintf(PAGER, "%*s: ",(int) max_length,field->name);
-      if (cur[off])
+      if (strcmp(field->name, "ip") == 0)
+      {
+        if (lengths[off] == 4)
+        {
+          memcpy(ip_tmp, cur[off], lengths[off]);
+          inet_ntop(AF_INET, ip_tmp, ip_dst, INET_ADDRSTRLEN);
+          tee_fprintf(PAGER, "INET6_ATON('%s')\n", ip_dst);
+        }
+        else if (lengths[off] == 16)
+        {
+          memcpy(ip_tmp, cur[off], lengths[off]);
+          inet_ntop(AF_INET6, ip_tmp, ip_dst, INET6_ADDRSTRLEN);
+          tee_fprintf(PAGER, "INET6_ATON('%s')\n", ip_dst);
+        }
+        else {
+          tee_write(PAGER, cur[off], lengths[off], MY_PRINT_SPS_0 | MY_PRINT_MB);
+          tee_putc('\n', PAGER);
+        }
+      }
+      else if (cur[off])
       {
         tee_write(PAGER, cur[off], lengths[off], MY_PRINT_SPS_0 | MY_PRINT_MB);
         tee_putc('\n', PAGER);
