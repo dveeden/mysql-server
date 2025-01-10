@@ -283,11 +283,28 @@ bool show_replicas(THD *thd) {
 /**
   @page page_protocol_replication Replication Protocol
 
-  Replication uses binlogs to ship changes done on the master to the slave
-  and can be written to @ref sect_protocol_replication_binlog_file and sent
-  over the network as @ref sect_protocol_replication_binlog_stream.
+  Replication uses binary logs (binlogs) to ship changes done on the replication
+  source to the replica and can be written to @ref sect_protocol_replication_binlog_file
+  and sent over the network as @ref sect_protocol_replication_binlog_stream.
 
-  @section sect_protocol_replication_binlog_file Binlog File
+  Binlogs are also used for point-in-time recovery to fill in the changes between
+  the last backup and the recovery point.
+
+  The replication stream can also be used for change data capture (CDC).
+
+  @section sect_protocol_replication_binlog_stream Binlog Network Stream
+
+  Networks streams are setup and authenticated in the same way regular connections are.
+
+  The replica can optionally choose to register itself by sending a
+  @subpage page_protocol_com_register_replica command.
+
+  Network streams are requested with @subpage page_protocol_com_binlog_dump when
+  using filename and offset based positioning and @subpage page_protocol_com_binlog_dump_gtid
+  when using GTID based positioning. Each @ref page_protocol_replication_binlog_event is
+  prepended with a `00` OK-byte.
+
+  @section sect_protocol_replication_binlog_file Binlog Files
 
   Binlog files start with a @ref sect_protocol_replication_binlog_file_header
   followed by a series of @subpage page_protocol_replication_binlog_event
@@ -303,10 +320,13 @@ bool show_replicas(THD *thd) {
   ...
   ~~~~~
 
-  @section sect_protocol_replication_binlog_stream Binlog Network Stream
+*/
 
-  Network streams are requested with @subpage page_protocol_com_binlog_dump and
-  prepend each @ref page_protocol_replication_binlog_event with `00` OK-byte.
+/**
+  @page page_protocol_replication_binlog_event Binlog Event
+
+  The events contain the actual data that should be shipped from the master to
+  the slave. Depending on the use, different events are sent.
 
   @section sect_protocol_replication_binlog_version Binlog Version
 
@@ -319,6 +339,9 @@ bool show_replicas(THD *thd) {
   2              | MySQL 4.0.0 - 4.0.1
   3              | MySQL 4.0.2 - < 5.0.0
   4              | MySQL 5.0.0+
+
+  @note In <a href="https://dev.mysql.com/worklog/task/?id=9219">WL#9219: Remove cross compatibility code for binlog V1-V3</a>
+  compatibility for versions older than 4 were removed.
 
   @subsection sect_protocol_replication_binlog_version_v1 Version 1
 
@@ -338,15 +361,38 @@ bool show_replicas(THD *thd) {
   Added the @ref sect_protocol_replication_event_format_desc and made the
   protocol extensible.
 
-  In MySQL 5.1.x the @ref sect_protocol_replication_binlog_event_rbr were
-  added.
-*/
+  @section sect_protocol_replication_binlog_event_header Binlog Event Header
 
-/**
-  @page page_protocol_replication_binlog_event Binlog Event
+  A binlog event starts with @ref sect_protocol_replication_binlog_event_header
+  and is followed by a event specific part.
 
-  The events contain the actual data that should be shipped from the master to
-  the slave. Depending on the use, different events are sent.
+  The binlog event header starts each event and is either 13 or 19 bytes long, depending
+  on the @ref sect_protocol_replication_binlog_version
+
+  <table>
+  <caption>Binlog::EventHeader:</caption>
+  <tr><th>Type</th><th>Name</th><th>Description</th></tr>
+  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
+      <td>timestamp</td>
+      <td>seconds since unix epoch</td></tr>
+  <tr><td>@ref a_protocol_type_int1 "int&lt;1&gt;"</td>
+      <td>event_type</td>
+      <td>See mysql::binlog::event::Log_event_type</td></tr>
+  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
+      <td>server-id</td>
+      <td>server-id of the originating mysql-server. Used to filter out events
+        in circular replication</td></tr>
+  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
+      <td>event-size</td>
+      <td>size of the event (header, post-header, body)</td></tr>
+  <tr><td colspan="3">if binlog-version > 1 {</td></tr>
+  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
+      <td>log-pos</td>
+      <td>position of the next event</td></tr>
+  <tr><td>@ref a_protocol_type_int2 "int&lt;2&gt;"</td>
+      <td>flags</td>
+      <td>See @ref group_cs_binglog_event_header_flags</td></tr>
+  </table>
 
   @section sect_protocol_replication_binlog_event_mgmt Binlog Management
 
@@ -356,6 +402,8 @@ bool show_replicas(THD *thd) {
   @ref sect_protocol_replication_event_rotate.
 
   @subsection sect_protocol_replication_event_start_v3 START_EVENT_V3
+
+  @note @ref sect_protocol_replication_event_format_desc is used instead for binlog v4.
 
   <table>
   <caption>Binlog::START_EVENT_V3:</caption>
@@ -396,12 +444,10 @@ bool show_replicas(THD *thd) {
   <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
       <td>create-timestamp</td>
       <td>seconds since Unix epoch when the binlog was created</td></tr>
-  </table>
   <tr><td>@ref a_protocol_type_int1 "int&lt;1&gt;"</td>
       <td>event-header-length</td>
       <td>Length of the @ref sect_protocol_replication_binlog_event_header
         of next events. Should always be 19.</td></tr>
-  </table>
   <tr><td>@ref sect_protocol_basic_dt_string_eof "string&lt;EOF&gt;"</td>
       <td>event type header lengths</td>
       <td>a array indexed by `binlog-event-type - 1` to extract the length
@@ -549,16 +595,42 @@ bool show_replicas(THD *thd) {
       <td>Incident message with length `message_length`</td></tr>
   </table>
 
-  @subsection sect_protocol_replication_event_heartbeat HEARTBEAT_EVENT
+  @subsection sect_protocol_replication_event_heartbeat HEARTBEAT_LOG_EVENT
 
   An artificial event generated by the master. It isn't written to the relay
   logs.
 
   It is added by the master after the replication connection was idle for
   `x` seconds to update the slave's  Seconds_behind_source timestamp in the
-  SHOW REPLICA STATUS output.
+  `SHOW REPLICA STATUS` output.
 
   It has no payload nor post-header.
+
+  @subsection sect_protocol_replication_event_heartbeat_log_v2 HEARTBEAT_LOG_EVENT_V2
+
+  Similar to @ref sect_protocol_replication_event_heartbeat but able to handlde binlogs sizes
+  over 4 GiB.
+
+  @subsection sect_protocol_replication_event_gtid_log GTID_LOG_EVENT
+
+  This is to indicate the GTID assigned to a specific transaction.
+
+  @subsection sect_protocol_replication_event_anonymous_gtid_log ANONYMOUS_GTID_LOG_EVENT
+
+  This is used for transactions that have no GTID assigned.
+
+  @subsection sect_protocol_replication_event_previous_gtids_log PREVIOUS_GTIDS_LOG_EVENT
+
+  This is a list of GTID sets from previous binlog files.
+
+  @subsection sect_protocol_replication_event_gtid_tagged_log GTID_TAGGED_LOG_EVENT
+
+  This is similar to @ref sect_protocol_replication_event_gtid_log and adds suppport for tagged GTID.
+
+  @subsection sect_protocol_replication_event_view_change VIEW_CHANGE_EVENT
+
+  This event is not written to binlog files but send over the replication stream to indicate
+  group replication view changes.
 
   @section sect_protocol_replication_binlog_event_sbr Statement Based Replication Events
 
@@ -774,15 +846,32 @@ bool show_replicas(THD *thd) {
   </table>
 
   @subsection sect_protocol_replication_event_intvar INTVAR_EVENT
+
+  Used to send the `LAST_INSERT_ID` if it is used in the statement.
+
   @subsection sect_protocol_replication_event_rand RAND_EVENT
+
+  Used to send information about random values if the `RAND()` function is used in the statement.
+
   @subsection sect_protocol_replication_event_uservar USER_VAR_EVENT
+
+  Used to send user variables if used in the statement.
+
   @subsection sect_protocol_replication_event_xid XID_EVENT
+
+  This is to persist a `COMMIT` operation.
+
+  @subsection sect_protocol_replication_event_xa_prepare_log XA_PREPARE_LOG_EVENT
+
+  This is to persist a `XA PREPARE` operation.
 
   @section sect_protocol_replication_binlog_event_rbr Row Based Replication Events
 
   In Row Based replication the changed rows are sent to the slave which removes
   side-effects and makes it more reliable. Now all statements can be sent with
   RBR though. Most of the time you will see RBR and SBR side by side.
+
+  Row Based events were added in MySQL 5.1.x.
 
   @subsection sect_protocol_replication_event_table_map TABLE_MAP_EVENT
   @subsection sect_protocol_replication_event_delete_rows_v0 DELETE_ROWS_EVENTv0
@@ -791,6 +880,12 @@ bool show_replicas(THD *thd) {
   @subsection sect_protocol_replication_event_delete_rows_v2 DELETE_ROWS_EVENTv2
   @subsection sect_protocol_replication_event_update_rows_v2 UPDATE_ROWS_EVENTv2
   @subsection sect_protocol_replication_event_write_rows_v2 WRITE_ROWS_EVENTv2
+  @subsection sect_protocol_replication_event_partial_update_rows PARTIAL_UPDATE_ROWS_EVENT
+
+  @section sect_protocol_replication_binlog_compression Binlog Compression
+
+  @subsection sect_protocol_replication_event_transaction_context TRANSACTION_CONTEXT_EVENT
+  @subsection sect_protocol_replication_event_transaction_payload TRANSACTION_PAYLOAD_EVENT
 
   @section sect_protocol_replication_binlog_event_load_file LOAD INFILE replication
 
@@ -805,39 +900,6 @@ bool show_replicas(THD *thd) {
   @subsection sect_protocol_replication_event_new_load NEW_LOAD_EVENT
   @subsection sect_protocol_replication_event_load_query_begin BEGIN_LOAD_QUERY_EVENT
   @subsection sect_protocol_replication_event_load_query_execute EXECUTE_LOAD_QUERY_EVENT
-
-  A binlog event starts with @ref sect_protocol_replication_binlog_event_header
-  and is followed by a event specific part.
-
-  @section sect_protocol_replication_binlog_event_header Binlog Event Header
-
-  The binlog event header starts each event and is either 13 or 19 bytes long, depending
-  on the @ref sect_protocol_replication_binlog_version
-
-  <table>
-  <caption>Binlog::EventHeader:</caption>
-  <tr><th>Type</th><th>Name</th><th>Description</th></tr>
-  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
-      <td>timestamp</td>
-      <td>seconds since unix epoch</td></tr>
-  <tr><td>@ref a_protocol_type_int1 "int&lt;1&gt;"</td>
-      <td>event_type</td>
-      <td>See mysql::binlog::event::Log_event_type</td></tr>
-  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
-      <td>server-id</td>
-      <td>server-id of the originating mysql-server. Used to filter out events
-        in circular replication</td></tr>
-  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
-      <td>event-size</td>
-      <td>size of the event (header, post-header, body)</td></tr>
-  <tr><td colspan="3">if binlog-version > 1 {</td></tr>
-  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
-      <td>log-pos</td>
-      <td>position of the next event</td></tr>
-  <tr><td>@ref a_protocol_type_int2 "int&lt;2&gt;"</td>
-      <td>flags</td>
-      <td>See @ref group_cs_binglog_event_header_flags</td></tr>
-  </table>
 */
 
 
@@ -845,6 +907,7 @@ bool show_replicas(THD *thd) {
   @page page_protocol_com_binlog_dump COM_BINLOG_DUMP
 
   @brief Request a @ref sect_protocol_replication_binlog_stream from the server
+  based on a filename and offset based position.
 
   @return @ref sect_protocol_replication_binlog_stream on success or
     @ref page_protocol_basic_err_packet on error
@@ -864,13 +927,109 @@ bool show_replicas(THD *thd) {
           ::BINLOG_DUMP_NON_BLOCK</td></tr>
   <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
       <td>server-id</td>
-      <td>Server id of this slave</td></tr>
+      <td>Server id of this replica</td></tr>
   <tr><td>@ref sect_protocol_basic_dt_string_eof "string&lt;EOF&gt;"</td>
       <td>binlog-filename</td>
-      <td>filename of the binlog on the master</td></tr>
+      <td>filename of the binlog on the replication source</td></tr>
   </table>
 
-  @sa com_binlog_dump
+  @sa @ref page_protocol_com_binlog_dump_gtid
+*/
+
+/**
+  @page page_protocol_com_binlog_dump_gtid COM_BINLOG_DUMP_GTID
+
+  @brief Request a @ref sect_protocol_replication_binlog_stream from the server
+  based on a GTID position.
+
+  @return @ref sect_protocol_replication_binlog_stream on success or
+    @ref page_protocol_basic_err_packet on error
+
+  <table>
+  <caption>Payload</caption>
+  <tr><th>Type</th><th>Name</th><th>Description</th></tr>
+  <tr><td>@ref a_protocol_type_int1 "int&lt;1&gt;"</td>
+      <td>status</td>
+      <td>[0x1e] COM_BINLOG_DUMP_GTID</td></tr>
+  <tr><td>@ref a_protocol_type_int2 "int&lt;2&gt;"</td>
+      <td>flags</td>
+      <td>can right now has one possible value:
+          ::BINLOG_DUMP_NON_BLOCK</td></tr>
+  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
+      <td>server-id</td>
+      <td>Server id of this replica</td></tr>
+  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
+      <td>filename_length</td>
+      <td>Filename length, always 0</td></tr>
+  <tr><td>@ref a_protocol_type_int8 "int&lt;8&gt;"</td>
+      <td>position</td>
+      <td>position, always 4</td></tr>
+  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
+      <td>gtid_length</td>
+      <td>Length of GTID data</td></tr>
+  <tr><td>@ref sect_protocol_basic_dt_string_var "binary&lt;gtid_length&gt;"</td>
+      <td>gtid_data</td>
+      <td>GTID data containing an encoded GTID Set.</td></tr>
+  </table>
+
+  @sa @ref page_protocol_com_binlog_dump
+*/
+
+/**
+  @page page_protocol_com_register_replica COM_REGISTER_REPLICA
+
+  @brief Register a replica to the replication source. This is used
+  in the output of `SHOW REPLICAS`. This can be used for automatic
+  topology discovery and such.
+
+  @note The username, password and other fields of this packet
+  are <b>not</b> used for authentication.
+
+  @note This command was previously known as `COM_REGISTER_SLAVE`.
+
+  The replica UUID is registered by setting the `replica_uuid` variable
+  before sending `COM_REGISTER_REPLICA`.
+
+  @return @ref page_protocol_basic_ok_packet on success or
+    @ref page_protocol_basic_err_packet on error
+
+  <table>
+  <caption>Payload</caption>
+  <tr><th>Type</th><th>Name</th><th>Description</th></tr>
+      <tr><td>@ref a_protocol_type_int1 "int&lt;1&gt;"</td>
+      <td>status</td>
+      <td>[0x15] COM_REGISTER_REPLICA</td></tr>
+  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
+      <td>server_id</td>
+      <td>Replica server id</td></tr>
+  <tr><td>@ref a_protocol_type_int1 "int&lt;1&gt;"</td>
+      <td>hostname_length</td>
+      <td>Replica hostname length</td></tr>
+  <tr><td>@ref sect_protocol_basic_dt_string_var "string&lt;hostname_length&gt;"</td>
+      <td>hostname</td>
+      <td>Replica hostname</td></tr>
+  <tr><td>@ref a_protocol_type_int1 "int&lt;1&gt;"</td>
+      <td>username_length</td>
+      <td>Replica username length</td></tr>
+  <tr><td>@ref sect_protocol_basic_dt_string_var "string&lt;username_length&gt;"</td>
+      <td>username</td>
+      <td>Replica username</td></tr>
+  <tr><td>@ref a_protocol_type_int1 "int&lt;1&gt;"</td>
+      <td>password_length</td>
+      <td>Replica password</td></tr>
+  <tr><td>@ref sect_protocol_basic_dt_string_var "string&lt;password_length&gt;"</td>
+      <td>password</td>
+      <td>Replica password, max 32 characters</td></tr>
+  <tr><td>@ref a_protocol_type_int2 "int&lt;2&gt;"</td>
+      <td>port</td>
+      <td>Replica port</td></tr>
+  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
+      <td>port</td>
+      <td>Replication rank, always 0</td></tr>
+  <tr><td>@ref a_protocol_type_int4 "int&lt;4&gt;"</td>
+      <td>port</td>
+      <td>Source server id, always 0</td></tr>
+  </table>
 */
 /* clang-format on */
 
